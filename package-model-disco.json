@@ -22,6 +22,27 @@
             "packageBranch": "master"
         },
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-none.git",
+            "packageName": "regolith-compositor-none",
+            "buildPath": "regolith-compositor-none",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-xcompmgr.git",
+            "packageName": "regolith-compositor-xcompmgr",
+            "buildPath": "regolith-compositor-xcompmgr",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-compton-glx.git",
+            "packageName": "regolith-compositor-compton-glx",
+            "buildPath": "regolith-compositor-compton-glx",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-st.git",
             "packageName": "regolith-st",
             "buildPath": "regolith-st",

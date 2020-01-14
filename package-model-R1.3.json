@@ -36,6 +36,13 @@
             "packageBranch": "master"
         },
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-gnome-flashback.git",
+            "packageName": "regolith-gnome-flashback",
+            "buildPath": "regolith-gnome-flashback",
+            "upstreamTarball": "",
+            "packageBranch": "disco"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
             "packageName": "regolith-desktop",
             "buildPath": "regolith-desktop",
@@ -76,6 +83,64 @@
             "buildPath": "regolith-compositor-compton-glx",
             "upstreamTarball": "",
             "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/Cahuella.git",
+            "packageName": "cahuella",
+            "buildPath": "cahuella",
+            "upstreamTarball": "",
+            "packageBranch": "debian"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/Cahuella.git",
+            "packageName": "remontoire",
+            "buildPath": "remontoire",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        }
+    ],
+    "copies": [
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "i3-snapshot",
+            "sourceVersion": "bionic",
+            "targetVersions": "bionic,disco,eoan"
+        },
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "compton",
+            "sourceVersion": "bionic",
+            "targetVersions": "bionic,disco,eoan"
+        },
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "i3-gaps-wm",
+            "sourceVersion": "bionic",
+            "targetVersions": "bionic,disco,eoan"
+        },
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "i3ipc-python",
+            "sourceVersion": "bionic",
+            "targetVersions": "bionic,disco,eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "i3xrocks",
+            "sourceVersion": "bionic",
+            "targetVersions": "bionic,disco,eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "unclutter-xfixes",
+            "sourceVersion": "bionic",
+            "targetVersions": "bionic,disco,eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "xrescat",
+            "sourceVersion": "bionic",
+            "targetVersions": "bionic,disco,eoan"
         }
     ]
 }

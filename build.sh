@@ -7,7 +7,7 @@ if [ "$#" -lt 3 ]; then
     echo "This script builds Debian packages.  It uses a package model file that describes each package."
     echo "Each package is checked out of a git repo, source is downloaded, built, and then deployed to a PPA."
     echo "If no package name is specified from the model, all packages are built."
-    echo "Usage: build.sh <package model> <user PPA> <build dir> [package]"
+    echo "Usage: build.sh <package model> <target PPA> <temp build dir> [package]"
     exit 1
 fi
 
@@ -85,6 +85,15 @@ publish() {
     dput -f $PPA_URL ${packageModel[buildPath]}/../${packageModel[packageName]}\_$version\_source.changes
 }
 
+# PPA Copy
+ppa_copy() {
+    print_banner "Copying source package ${copyModel[packageName]} from ${copyModel[ppaUrl]}"
+    
+    for targetVersion in ${copyModel[targetVersions]//,/ }; do
+        echo copy-package --from=${copyModel[ppaUrl]} --from-suite=${copyModel[sourceVersion]} --to=$PPA_URL --to-suite=$targetVersion -b -y ${copyModel[packageName]}
+    done    
+}
+
 # Verify execution environment
 hash git 2>/dev/null || { echo >&2 "Required command git is not found on this system. Please install it. Aborting."; exit 1; }
 hash debuild 2>/dev/null || { echo >&2 "Required command debuild is not found on this system. Please install it. Aborting."; exit 1; }
@@ -93,6 +102,7 @@ hash wget 2>/dev/null || { echo >&2 "Required command wget is not found on this 
 hash dpkg-parsechangelog 2>/dev/null || { echo >&2 "Required command dpkg-parsechangelog is not found on this system. Please install it. Aborting."; exit 1; }
 hash realpath 2>/dev/null || { echo >&2 "Required command realpath is not found on this system. Please install it. Aborting."; exit 1; }
 hash curl 2>/dev/null || { echo >&2 "Required command curl is not found on this system. Please install it. Aborting."; exit 1; }
+hash copy-package 2>/dev/null || { echo >&2 "Required command copy-package is not found on this system. Please install it from http://bazaar.launchpad.net/~ubuntu-archive/ubuntu-archive-tools/trunk/files. Aborting."; exit 1; }
 
 # Main
 set -e
@@ -107,10 +117,10 @@ PPA_NAME="$(echo $TEMP1 | cut -d'/' -f2)"
 print_banner "Generating packages in $BUILD_DIR"
 
 typeset -A packageModel
+typeset -A copyModel
 cd $BUILD_DIR
 
-cat $PACKAGE_MODEL_FILE | \
-jq -rc '.packages[]' | while IFS='' read package; do
+cat $PACKAGE_MODEL_FILE | jq -rc '.packages[]' | while IFS='' read package; do
     while IFS== read -r key value; do
         packageModel["$key"]="$value"
     done < <( echo $package | jq -r 'to_entries | .[] | .key + "=" + .value')
@@ -126,4 +136,12 @@ jq -rc '.packages[]' | while IFS='' read package; do
       build 
       publish 
     fi
+done
+
+cat $PACKAGE_MODEL_FILE | jq -rc '.copies[]' | while IFS='' read copy; do
+    while IFS== read -r key value; do
+        copyModel["$key"]="$value"
+    done < <( echo $copy | jq -r 'to_entries | .[] | .key + "=" + .value')
+
+    ppa_copy
 done
