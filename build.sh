@@ -90,7 +90,7 @@ ppa_copy() {
     print_banner "Copying source package ${copyModel[packageName]} from ${copyModel[ppaUrl]}"
     
     for targetVersion in ${copyModel[targetVersions]//,/ }; do
-        echo copy-package --from=${copyModel[ppaUrl]} --from-suite=${copyModel[sourceVersion]} --to=$PPA_URL --to-suite=$targetVersion -b -y ${copyModel[packageName]}
+        copy-package --from=${copyModel[ppaUrl]} --from-suite=${copyModel[sourceVersion]} --to=$PPA_URL --to-suite=$targetVersion -b -y ${copyModel[packageName]}
     done    
 }
 

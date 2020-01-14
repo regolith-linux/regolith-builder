@@ -85,14 +85,14 @@
             "packageBranch": "master"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/Cahuella.git",
+            "gitRepoUrl": "https://github.com/regolith-linux/cahuella.git",
             "packageName": "cahuella",
             "buildPath": "cahuella",
             "upstreamTarball": "",
             "packageBranch": "debian"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/Cahuella.git",
+            "gitRepoUrl": "https://github.com/regolith-linux/remontoire.git",
             "packageName": "remontoire",
             "buildPath": "remontoire",
             "upstreamTarball": "",
@@ -133,7 +133,7 @@
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "unclutter-xfixes",
-            "sourceVersion": "bionic",
+            "sourceVersion": "eoan",
             "targetVersions": "bionic,disco,eoan"
         },        
         {
