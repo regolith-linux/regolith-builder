@@ -141,6 +141,24 @@
             "packageName": "xrescat",
             "sourceVersion": "bionic",
             "targetVersions": "bionic,disco,eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "fonts-source-code-pro-ttf",
+            "sourceVersion": "eoan",
+            "targetVersions": "bionic,disco,eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "moka-icon-theme",
+            "sourceVersion": "disco",
+            "targetVersions": "bionic,disco,eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "paper-icon-theme",
+            "sourceVersion": "disco",
+            "targetVersions": "bionic,disco,eoan"
         }
     ]
 }
