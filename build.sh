@@ -143,5 +143,9 @@ cat $PACKAGE_MODEL_FILE | jq -rc '.copies[]' | while IFS='' read copy; do
         copyModel["$key"]="$value"
     done < <( echo $copy | jq -r 'to_entries | .[] | .key + "=" + .value')
 
+    if [[ ! -z "$PACKAGE" && "$PACKAGE" != "${copyModel[packageName]}" ]]; then
+        continue
+    fi
+
     ppa_copy
 done

@@ -85,6 +85,13 @@
             "packageBranch": "master"
         },
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-compton-glx.git",
+            "packageName": "regolith-compositor-compton-glx",
+            "buildPath": "regolith-compositor-compton-glx",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/cahuella.git",
             "packageName": "cahuella",
             "buildPath": "cahuella",
@@ -95,6 +102,13 @@
             "gitRepoUrl": "https://github.com/regolith-linux/remontoire.git",
             "packageName": "remontoire",
             "buildPath": "remontoire",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-rofication.git",
+            "packageName": "regolith-rofication",
+            "buildPath": "regolith-rofication",
             "upstreamTarball": "",
             "packageBranch": "master"
         }
