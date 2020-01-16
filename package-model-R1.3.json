@@ -85,13 +85,6 @@
             "packageBranch": "master"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-compton-glx.git",
-            "packageName": "regolith-compositor-compton-glx",
-            "buildPath": "regolith-compositor-compton-glx",
-            "upstreamTarball": "",
-            "packageBranch": "master"
-        },
-        {
             "gitRepoUrl": "https://github.com/regolith-linux/cahuella.git",
             "packageName": "cahuella",
             "buildPath": "cahuella",
@@ -118,61 +111,61 @@
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "i3-snapshot",
             "sourceVersion": "bionic",
-            "targetVersions": "bionic,disco,eoan"
+            "targetVersions": "eoan"
         },
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "compton",
             "sourceVersion": "bionic",
-            "targetVersions": "bionic,disco,eoan"
+            "targetVersions": "eoan"
         },
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "i3-gaps-wm",
             "sourceVersion": "bionic",
-            "targetVersions": "bionic,disco,eoan"
+            "targetVersions": "eoan"
         },
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "i3ipc-python",
             "sourceVersion": "bionic",
-            "targetVersions": "bionic,disco,eoan"
+            "targetVersions": "eoan"
         },        
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "i3xrocks",
             "sourceVersion": "bionic",
-            "targetVersions": "bionic,disco,eoan"
+            "targetVersions": "eoan"
         },        
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "unclutter-xfixes",
             "sourceVersion": "eoan",
-            "targetVersions": "bionic,disco,eoan"
+            "targetVersions": "eoan"
         },        
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "xrescat",
             "sourceVersion": "bionic",
-            "targetVersions": "bionic,disco,eoan"
+            "targetVersions": "eoan"
         },        
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "fonts-source-code-pro-ttf",
             "sourceVersion": "eoan",
-            "targetVersions": "bionic,disco,eoan"
+            "targetVersions": "eoan"
         },        
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "moka-icon-theme",
             "sourceVersion": "disco",
-            "targetVersions": "bionic,disco,eoan"
+            "targetVersions": "eoan"
         },        
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "paper-icon-theme",
             "sourceVersion": "disco",
-            "targetVersions": "bionic,disco,eoan"
+            "targetVersions": "eoan"
         }
     ]
 }
