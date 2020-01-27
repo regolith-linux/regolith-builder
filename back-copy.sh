@@ -8,10 +8,36 @@ back_copy() {
     done 
 }
 
-SOURCE_PPA="~regolith-linux/ubuntu/unstable"
-TARGET_PPA="~regolith-linux/ubuntu/unstable"
-SOURCE_VERSION="eoan"
-TARGET_VERSION="bionic"
-PACKAGES="regolith-compositor-compton-glx,regolith-compositor-none,regolith-compositor-xcompmgr,regolith-desktop,regolith-ftue,regolith-gdm3-theme,regolith-i3-gaps-config,regolith-i3xrocks-config,regolith-st,regolith-styles,regolith-rofication,remontoire,cahuella,fonts-source-code-pro-ttf,moka-icon-theme,paper-icon-theme"
+SOURCE_PPA=$1
+SOURCE_VERSION=$2
+TARGET_PPA=$3
+TARGET_VERSION=$4
+if [ -z "$5" ]; then
+    PACKAGES="regolith-compositor-compton-glx,
+    regolith-compositor-none,
+    regolith-compositor-xcompmgr,
+    regolith-desktop,
+    regolith-ftue,
+    regolith-gdm3-theme,
+    regolith-i3-gaps-config,
+    regolith-i3xrocks-config,
+    regolith-st,
+    regolith-styles,
+    regolith-rofication,
+    remontoire,
+    cahuella,
+    fonts-source-code-pro-ttf,
+    moka-icon-theme,
+    paper-icon-theme,
+    compton,
+    i3-gaps-wm,
+    i3-snapshot,
+    i3ipc-python,
+    i3xrocks,
+    unclutter-xfixes,
+    xrescat"
+else
+    PACKAGES=$5
+fi
 
 back_copy
