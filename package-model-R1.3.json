@@ -40,7 +40,7 @@
             "packageName": "regolith-gnome-flashback",
             "buildPath": "regolith-gnome-flashback",
             "upstreamTarball": "",
-            "packageBranch": "disco"
+            "packageBranch": "bionic"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
@@ -158,13 +158,13 @@
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "moka-icon-theme",
-            "sourceVersion": "disco",
+            "sourceVersion": "bionic",
             "targetVersions": "eoan"
         },        
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "paper-icon-theme",
-            "sourceVersion": "disco",
+            "sourceVersion": "bionic",
             "targetVersions": "eoan"
         }
     ]
