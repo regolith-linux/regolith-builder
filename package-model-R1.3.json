@@ -166,6 +166,18 @@
             "packageName": "paper-icon-theme",
             "sourceVersion": "bionic",
             "targetVersions": "eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "paper-icon-theme",
+            "sourceVersion": "bionic",
+            "targetVersions": "eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "ayu-theme",
+            "sourceVersion": "eoan",
+            "targetVersions": "eoan"
         }
     ]
 }
