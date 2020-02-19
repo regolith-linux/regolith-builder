@@ -36,13 +36,6 @@
             "packageBranch": "master"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-gnome-flashback.git",
-            "packageName": "regolith-gnome-flashback",
-            "buildPath": "regolith-gnome-flashback",
-            "upstreamTarball": "",
-            "packageBranch": "bionic"
-        },
-        {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
             "packageName": "regolith-desktop",
             "buildPath": "regolith-desktop",
