@@ -1,0 +1,183 @@
+{
+    "packages": [
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-i3-gaps-config.git",
+            "packageName": "regolith-i3-gaps-config",
+            "buildPath": "regolith-i3-gaps-config",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-styles.git",
+            "packageName": "regolith-styles",
+            "buildPath": "regolith-styles",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-st.git",
+            "packageName": "regolith-st",
+            "buildPath": "regolith-st",
+            "upstreamTarball": "https://dl.suckless.org/st/st-0.8.2.tar.gz",
+            "packageBranch": "debian"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-i3xrocks-config.git",
+            "packageName": "regolith-i3xrocks-config",
+            "buildPath": "regolith-i3xrocks-config",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-gnome-flashback.git",
+            "packageName": "regolith-gnome-flashback",
+            "buildPath": "regolith-gnome-flashback",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
+            "packageName": "regolith-desktop",
+            "buildPath": "regolith-desktop",
+            "upstreamTarball": "",
+            "packageBranch": "debian"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-gdm3-theme.git",
+            "packageName": "regolith-gdm3-theme",
+            "buildPath": "regolith-gdm3-theme",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-ftue.git",
+            "packageName": "regolith-ftue",
+            "buildPath": "regolith-ftue",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-none.git",
+            "packageName": "regolith-compositor-none",
+            "buildPath": "regolith-compositor-none",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-xcompmgr.git",
+            "packageName": "regolith-compositor-xcompmgr",
+            "buildPath": "regolith-compositor-xcompmgr",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-compton-glx.git",
+            "packageName": "regolith-compositor-compton-glx",
+            "buildPath": "regolith-compositor-compton-glx",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/cahuella.git",
+            "packageName": "cahuella",
+            "buildPath": "cahuella",
+            "upstreamTarball": "",
+            "packageBranch": "debian"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/grelier.git",
+            "packageName": "grelier",
+            "buildPath": "grelier",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/remontoire.git",
+            "packageName": "remontoire",
+            "buildPath": "remontoire",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-rofication.git",
+            "packageName": "regolith-rofication",
+            "buildPath": "regolith-rofication",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        }
+    ],
+    "copies": [
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "i3-snapshot",
+            "sourceVersion": "bionic",
+            "targetVersions": "eoan"
+        },
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "compton",
+            "sourceVersion": "bionic",
+            "targetVersions": "eoan"
+        },
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "i3-gaps-wm",
+            "sourceVersion": "bionic",
+            "targetVersions": "eoan"
+        },
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "i3ipc-python",
+            "sourceVersion": "bionic",
+            "targetVersions": "eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "i3xrocks",
+            "sourceVersion": "bionic",
+            "targetVersions": "eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "unclutter-xfixes",
+            "sourceVersion": "eoan",
+            "targetVersions": "eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "xrescat",
+            "sourceVersion": "bionic",
+            "targetVersions": "eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "fonts-source-code-pro-ttf",
+            "sourceVersion": "eoan",
+            "targetVersions": "eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "moka-icon-theme",
+            "sourceVersion": "bionic",
+            "targetVersions": "eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "paper-icon-theme",
+            "sourceVersion": "bionic",
+            "targetVersions": "eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "paper-icon-theme",
+            "sourceVersion": "bionic",
+            "targetVersions": "eoan"
+        },        
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "ayu-theme",
+            "sourceVersion": "eoan",
+            "targetVersions": "eoan"
+        }
+    ]
+}
