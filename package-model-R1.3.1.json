@@ -85,13 +85,6 @@
             "packageBranch": "debian"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/grelier.git",
-            "packageName": "grelier",
-            "buildPath": "grelier",
-            "upstreamTarball": "",
-            "packageBranch": "master"
-        },
-        {
             "gitRepoUrl": "https://github.com/regolith-linux/remontoire.git",
             "packageName": "remontoire",
             "buildPath": "remontoire",
