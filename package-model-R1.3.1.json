@@ -171,6 +171,12 @@
             "packageName": "ayu-theme",
             "sourceVersion": "eoan",
             "targetVersions": "eoan"
+        },
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "nordic",
+            "sourceVersion": "eoan",
+            "targetVersions": "eoan"
         }
     ]
 }
