@@ -50,6 +50,13 @@
             "packageBranch": "master"
         },
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-lightdm-config.git",
+            "packageName": "regolith-lightdm-config",
+            "buildPath": "regolith-lightdm-config",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-ftue.git",
             "packageName": "regolith-ftue",
             "buildPath": "regolith-ftue",
