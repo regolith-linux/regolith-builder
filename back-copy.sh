@@ -21,6 +21,7 @@ if [ -z "$5" ]; then
     regolith-gdm3-theme,
     regolith-i3-gaps-config,
     regolith-i3xrocks-config,
+    regolith-lightdm-config,
     regolith-st,
     regolith-styles,
     regolith-rofication,
