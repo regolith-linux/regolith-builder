@@ -64,9 +64,9 @@
             "packageBranch": "master"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/ubiquity-slideshow-regolith.git",
-            "packageName": "ubiquity-slideshow-regoltih",
-            "buildPath": "ubiquity-slideshow-regolith",
+            "gitRepoUrl": "https://github.com/regolith-linux/ubiquity-slideshow-ubuntu.git",
+            "packageName": "ubiquity-slideshow-ubuntu",
+            "buildPath": "ubiquity-slideshow-ubuntu",
             "upstreamTarball": "",
             "packageBranch": "master"
         },
