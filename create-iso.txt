@@ -1,0 +1,8 @@
+
+1. Create a new Cubic project
+2. Select Xubuntu-18.04.04 ISO 
+3. add-apt-repository ppa:regolith-linux/release
+4. apt install regolith-system
+5. apt remove gdm3 gnome-shell xfce4-* libxfce4* plymouth-theme-xubuntu-* ubiquity-slideshow-xubuntu xubuntu-* snapd greybird-gtk-theme libreoffice* evolution-* mate-calc* mousepad numix-gtk-theme pidgin* ristretto shimmer-themes thunar* thunderbird* xfburn xfpanel-switch xfwm4
+6. apt autoremove
+6. cp /usr/share/backgrounds/nord-dark.png /usr/share/backgrounds/warty-final-ubuntu.png

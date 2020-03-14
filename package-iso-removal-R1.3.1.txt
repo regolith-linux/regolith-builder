@@ -1,0 +1,1 @@
+gdm3 gnome-shellxfce4-* libxfce4* plymouth-theme-xubuntu-* ubiquity-slideshow-xubuntu xubuntu-* snapd greybird-gtk-theme libreoffice* evolution-* mate-calc* mousepad numix-gtk-theme pidgin* ristretto shimmer-themes thunar* thunderbird* xfburn xfpanel-switch xfwm4
