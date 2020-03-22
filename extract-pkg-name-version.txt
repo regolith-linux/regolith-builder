@@ -1,0 +1,1 @@
+cat /tmp/stable.txt | cut -d' ' -f1,3 | cut -d$'\t' -f1 | xclip -se c

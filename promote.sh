@@ -11,12 +11,19 @@ PACKAGE_NAME=$3
 
 FIRST_VERSION="eoan"
 SECOND_VERSION="bionic"
+THIRD_VERSION="focal"
 
 BUILDER_GRACE_PERIOD=1200 # 20 minutes
 
 if [[ "$SOURCE_STAGE" == "$TARGET_STAGE" ]]; then
     echo "Copying $PACKAGE_NAME version $FIRST_VERSION to $SECOND_VERSION in $SOURCE_STAGE"
     ./back-copy.sh $SOURCE_STAGE $FIRST_VERSION $TARGET_STAGE $SECOND_VERSION $PACKAGE_NAME
+
+    # PPAs cannot copy multiple releaes of the same package concurrently.
+    sleep $BUILDER_GRACE_PERIOD
+
+    echo "Copying $PACKAGE_NAME version $FIRST_VERSION to $THIRD_VERSION in $SOURCE_STAGE"
+    ./back-copy.sh $SOURCE_STAGE $FIRST_VERSION $TARGET_STAGE $THIRD_VERSION $PACKAGE_NAME
 else 
     echo "Promoting $PACKAGE_NAME from $SOURCE_STAGE to $TARGET_STAGE version $FIRST_VERSION"
     ./back-copy.sh $SOURCE_STAGE $FIRST_VERSION $TARGET_STAGE $FIRST_VERSION $PACKAGE_NAME

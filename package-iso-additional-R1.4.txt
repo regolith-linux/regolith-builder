@@ -1,0 +1,1 @@
+alsa-base lightdm lightdm-gtk-greeter nautilus regolith-lightdm-config ubiquity-frontend-gtk ubiquity-slideshow-regolith ubiquity eog evince file-roller gedit gnome-font-viewer htop neofetch vim
