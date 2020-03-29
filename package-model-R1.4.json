@@ -29,6 +29,13 @@
             "packageBranch": "debian"
         },
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/i3xrocks.git",
+            "packageName": "i3xrocks",
+            "buildPath": "i3xrocks",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-i3xrocks-config.git",
             "packageName": "regolith-i3xrocks-config",
             "buildPath": "regolith-i3xrocks-config",
@@ -158,49 +165,43 @@
             "packageName": "i3ipc-python",
             "sourceVersion": "bionic",
             "targetVersions": "eoan"
-        },        
-        {
-            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
-            "packageName": "i3xrocks",
-            "sourceVersion": "bionic",
-            "targetVersions": "eoan"
-        },        
+        },
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "unclutter-xfixes",
             "sourceVersion": "eoan",
             "targetVersions": "eoan"
-        },        
+        },
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "xrescat",
             "sourceVersion": "bionic",
             "targetVersions": "eoan"
-        },        
+        },
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "fonts-source-code-pro-ttf",
             "sourceVersion": "eoan",
             "targetVersions": "eoan"
-        },        
+        },
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "moka-icon-theme",
             "sourceVersion": "bionic",
             "targetVersions": "eoan"
-        },        
+        },
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "paper-icon-theme",
             "sourceVersion": "bionic",
             "targetVersions": "eoan"
-        },        
+        },
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "paper-icon-theme",
             "sourceVersion": "bionic",
             "targetVersions": "eoan"
-        },        
+        },
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "ayu-theme",
