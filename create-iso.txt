@@ -5,6 +5,5 @@
 4. add-apt-repository ppa:regolith-linux/release
 6. apt remove <removal>
 5. apt install <additions>
-5. apt install regolith-system
 6. apt autoremove
-6. cp /usr/share/backgrounds/nord-dark.png /usr/share/backgrounds/warty-final-ubuntu.png
+7. cp /usr/share/backgrounds/nord-dark.png /usr/share/backgrounds/warty-final-ubuntu.png
