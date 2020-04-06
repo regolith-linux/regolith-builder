@@ -174,6 +174,12 @@
         },
         {
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
+            "packageName": "playerctl",
+            "sourceVersion": "eoan",
+            "targetVersions": "eoan"
+        },
+        {
+            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "xrescat",
             "sourceVersion": "bionic",
             "targetVersions": "eoan"
