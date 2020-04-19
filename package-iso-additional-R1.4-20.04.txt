@@ -1,0 +1,1 @@
+alsa-base lightdm lightdm-gtk-greeter nautilus regolith-lightdm-config ubiquity-frontend-gtk ubiquity-slideshow-regolith ubiquity eog evince file-roller gedit gnome-font-viewer htop neofetch vim regolith-system i3xrocks-cpu-usage i3xrocks-memory i3xrocks-net-traffic i3xrocks-time update-manager software-properties-gtk
