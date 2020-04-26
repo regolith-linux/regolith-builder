@@ -2,12 +2,11 @@
 1. Create a new Cubic project
 2. Base from Xubuntu LiveCD ISO 
 # from terminal page
-3. apt update && apt upgrade
 4. add-apt-repository ppa:regolith-linux/release
-6. apt remove <removal>
 5. apt install <additions>
+6. apt remove <removal>
 6. apt autoremove
-7. cp /usr/share/backgrounds/nord-dark.png /usr/share/backgrounds/warty-final-ubuntu.png
+7. cp /usr/share/backgrounds/lucas-bellator-C0OD8OM-oM0-unsplash.jpg /usr/share/backgrounds/warty-final-ubuntu.png
 # from boot loader page
 8. add 'nosplash' to kernel parameters to avoid Xubuntu logo
 9. Change strings 'Xubuntu' to 'Regolith'

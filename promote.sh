@@ -3,6 +3,7 @@
 # Input Parameters
 if [ "$#" -lt 3 ]; then
     echo "Usage: promote.sh <source stage> <target stage> <package name>"
+    exit 1
 fi 
 
 SOURCE_STAGE="~regolith-linux/ubuntu/$1"
