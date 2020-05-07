@@ -1,0 +1,126 @@
+#!/usr/bin/python3
+# Author: Chris Johnston <cjohnston@ubuntu.com>
+# Initial inspiration from:
+# https://gist.github.com/nathan-osman/b9158d058cc45916dcd20a591b66d0b4
+from argparse import ArgumentParser
+from sys import exit
+
+try:
+    from launchpadlib.launchpad import Launchpad
+    from tabulate import tabulate
+except ImportError:
+    print("python3-launchpadlib and python3-tabulate are required")
+    exit(1)
+
+
+cachedir = "~/.launchpadlib/cache/"
+
+
+def login(args):
+    if args.staging:
+        lp = Launchpad.login_anonymously(
+            'PPA Testing',
+            'staging',
+            cachedir,
+            version='devel',
+        )
+    else:
+        lp = Launchpad.login_anonymously(
+            'PPA Testing',
+            'production',
+            cachedir,
+            version='devel',
+        )
+    return lp
+
+
+def fetch_packages(args):
+    launchpad = login(args)
+    user = launchpad.people[args.user]
+    archive = user.getPPAByName(name=args.ppa)
+    print("Retrieving packages...\n\n")
+    d = []
+    packages = archive.getPublishedBinaries(
+        binary_name=args.package,
+        exact_match=args.exact,
+        status=args.status,
+    )
+    for b in packages:
+        s = b.distro_arch_series
+        d.append((
+            b.binary_package_name,
+            b.binary_package_version,
+            s.display_name,
+        ))
+    print(tabulate(d, headers=(
+        'Name',
+        'Version',
+        'Series',
+    )))
+
+
+def parse_arguements(args=None):
+    parser = ArgumentParser(prog='ppa')
+    parser.add_argument(
+        '-v', '--verbosity', action='store', dest='verbosity', default=1,
+        type=int, choices=[1, 2, 3], help='Verbosity level; 1=errors only, '
+        '2=verbose output, 3=very verbose output. NOTE: currently only '
+        'supports httplib2.debuglevel 1',
+    )
+    parser.add_argument(
+        '--staging',
+        help="If passed, uses the staging instance of Launchpad.",
+        action="store_true",
+        required=False,
+    )
+    subparsers = parser.add_subparsers(title='actions', help='commands')
+    packages_parser = subparsers.add_parser(
+        'packages',
+        help="Get infomration about packages in a PPA",
+    )
+    packages_parser.add_argument(
+        '--user',
+        help="PPA Owner's Launchpad ID (can be a team)",
+        required=True,
+    )
+    packages_parser.add_argument(
+        '--ppa',
+        help="Launchpad ID or team name and name of PPA to look at",
+        required=True,
+    )
+    packages_parser.add_argument(
+        '--package',
+        help="Name of package to look at. Leaving blank will print all",
+        required=False,
+    )
+    packages_parser.add_argument(
+        '--exact',
+        help="If passed, only get packages that match the exact name.",
+        action="store_true",
+        required=False,
+    )
+    packages_parser.add_argument(
+        '--status',
+        help="View packages with a specific status. Default: Published",
+        required=False,
+        default="Published",
+        choices=["Pending", "Published", "Superseded", "Deleted", "Obsolete"],
+    )
+    packages_parser.set_defaults(func=fetch_packages)
+    return parser.parse_args(args)
+
+
+def main(args=None):
+    try:
+        args = parse_arguements(args)
+        if args.verbosity > 1:
+            import httplib2
+            httplib2.debuglevel = 1
+        args.func(args)
+        return 0
+    except Exception:
+        return 1
+
+
+if __name__ == '__main__':
+    exit(main())
