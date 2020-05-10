@@ -12,36 +12,11 @@ SOURCE_PPA=$1
 SOURCE_VERSION=$2
 TARGET_PPA=$3
 TARGET_VERSION=$4
-if [ -z "$5" ]; then
-    PACKAGES="regolith-compositor-compton-glx,
-    regolith-compositor-none,
-    regolith-compositor-xcompmgr,
-    regolith-desktop,
-    regolith-ftue,
-    regolith-gdm3-theme,
-    regolith-i3-gaps-config,
-    regolith-i3xrocks-config,
-    regolith-lightdm-config,
-    regolith-st,
-    regolith-styles,
-    regolith-rofication,
-    remontoire,
-    cahuella,
-    fonts-source-code-pro-ttf,
-    moka-icon-theme,
-    paper-icon-theme,
-    compton,
-    i3-gaps-wm,
-    i3-snapshot,
-    i3ipc-python,
-    i3xrocks,
-    unclutter-xfixes,
-    xrescat"
-else
-    PACKAGES=$5
+PACKAGES=$5
+
+if [ -z "$PACKAGES" ]; then
+    echo "Must specify packages."
+    exit 1
 fi
 
 back_copy
-
-## 3P package copies
-# arc-icon-theme, 

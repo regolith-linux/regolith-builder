@@ -10,9 +10,9 @@ SOURCE_STAGE="~regolith-linux/ubuntu/$1"
 TARGET_STAGE="~regolith-linux/ubuntu/$2"
 PACKAGE_NAME=$3
 
-FIRST_VERSION="eoan"
+FIRST_VERSION="focal"
 SECOND_VERSION="bionic"
-THIRD_VERSION="focal"
+THIRD_VERSION="eoan"
 
 BUILDER_GRACE_PERIOD=1200 # 20 minutes
 
