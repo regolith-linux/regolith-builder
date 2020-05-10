@@ -7,6 +7,7 @@ if [ "$#" -lt 2 ]; then
 fi 
 
 # set -x
+set -e
 
 SOURCE_STAGE="~regolith-linux/ubuntu/$1"
 TARGET_STAGE="~regolith-linux/ubuntu/$2"
@@ -15,15 +16,21 @@ if [ -z "$3" ]; then
 else
     PACKAGE_SPEC=$3
 fi
-RELEASES="bionic,eoan,focal"
+PROMOTE_RELEASE="bionic"
+COPY_RELEASES="eoan,focal"
 
 if [[ "$SOURCE_STAGE" == "$TARGET_STAGE" ]]; then
     echo "Cannot promote to the same stage."
     exit 1
 else
-    for RELEASE in ${RELEASES//,/ }; do
-        echo "*** Promoting $PACKAGE_SPEC from $SOURCE_STAGE to $TARGET_STAGE version $RELEASE"
-        ./back-copy.sh $SOURCE_STAGE $RELEASE $TARGET_STAGE $RELEASE $PACKAGE_SPEC
+    echo "*** Promoting $PACKAGE_SPEC from $SOURCE_STAGE to $TARGET_STAGE version $RELEASE"
+    ./back-copy.sh $SOURCE_STAGE $PROMOTE_RELEASE $TARGET_STAGE $PROMOTE_RELEASE $PACKAGE_SPEC
+
+    sleep 1800
+
+    for RELEASE in ${COPY_RELEASES//,/ }; do
+        echo "*** Promoting $PACKAGE_SPEC from $TARGET_STAGE / $PROMOTE_RELEASE to $TARGET_STAGE / $RELEASE"
+        ./back-copy.sh $TARGET_STAGE $PROMOTE_RELEASE $TARGET_STAGE $RELEASE $PACKAGE_SPEC
         sleep 1200
     done 
 fi
