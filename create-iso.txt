@@ -9,6 +9,7 @@ Add as recommend: fprintd
 6. apt remove <removal>
 6. apt autoremove
 7. cp /usr/share/backgrounds/lucas-bellator-C0OD8OM-oM0-unsplash.jpg /usr/share/backgrounds/warty-final-ubuntu.png
+8. update-alternatives --set default.plymouth /usr/share/plymouth/themes/spinner/spinner.plymouth
 # from boot loader page
 8. add 'nosplash' to kernel parameters to avoid Xubuntu logo
 9. Change strings 'Xubuntu' to 'Regolith'
