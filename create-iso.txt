@@ -1,5 +1,5 @@
 Integrate: https://github.com/regolith-linux/regolith-desktop/issues/357
-
+Add as recommend: fprintd
 
 1. Create a new Cubic project
 2. Base from Xubuntu LiveCD ISO 
