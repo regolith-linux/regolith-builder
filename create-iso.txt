@@ -1,15 +1,12 @@
-Integrate: https://github.com/regolith-linux/regolith-desktop/issues/357
-Add as recommend: fprintd
-
 1. Create a new Cubic project
 2. Base from Xubuntu LiveCD ISO 
 # from terminal page
 4. add-apt-repository ppa:regolith-linux/release
-5. apt install <additions>
+5. apt install --no-install-recommends <additions>
 6. apt remove <removal>
 6. apt autoremove
 7. cp /usr/share/backgrounds/lucas-bellator-C0OD8OM-oM0-unsplash.jpg /usr/share/backgrounds/warty-final-ubuntu.png
-8. update-alternatives --set default.plymouth /usr/share/plymouth/themes/spinner/spinner.plymouth
+8. update-alternatives --config default.plymouth
 # from boot loader page
 8. add 'nosplash' to kernel parameters to avoid Xubuntu logo
 9. Change strings 'Xubuntu' to 'Regolith'
