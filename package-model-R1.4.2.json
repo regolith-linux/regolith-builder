@@ -127,6 +127,13 @@
             "packageBranch": "master"
         },
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-picom-glx.git",
+            "packageName": "regolith-compositor-picom-glx",
+            "buildPath": "regolith-compositor-picom-glx",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/cahuella.git",
             "packageName": "cahuella",
             "buildPath": "cahuella",
