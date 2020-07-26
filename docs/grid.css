@@ -1,0 +1,15 @@
+.short-div {
+  height:25px;
+}
+
+.ppa-header {
+  background-color: none;
+  border: 1px solid rgba(106, 88, 133, 0.12);
+  text-align: center;
+}
+
+.release-header {
+  background-color: none;
+  border: none;
+  text-align: right;
+}
