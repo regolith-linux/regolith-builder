@@ -71,13 +71,6 @@
             "packageBranch": "ubuntu/bionic"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-gdm3-theme.git",
-            "packageName": "regolith-gdm3-theme",
-            "buildPath": "regolith-gdm3-theme",
-            "upstreamTarball": "",
-            "packageBranch": "master"
-        },
-        {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-lightdm-config.git",
             "packageName": "regolith-lightdm-config",
             "buildPath": "regolith-lightdm-config",
@@ -174,6 +167,13 @@
             "buildPath": "regolith-default-settings",
             "upstreamTarball": "",
             "packageBranch": "ubuntu/bionic"
+        },
+        {
+            "gitRepoUrl": "git@github.com:regolith-linux/xrescat.git",
+            "packageName": "xrescat",
+            "buildPath": "xrescat",
+            "upstreamTarball": "",
+            "packageBranch": "master"
         }
     ],
     "copies": [
@@ -211,12 +211,6 @@
             "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
             "packageName": "playerctl",
             "sourceVersion": "eoan",
-            "targetVersions": "eoan"
-        },
-        {
-            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
-            "packageName": "xrescat",
-            "sourceVersion": "bionic",
             "targetVersions": "eoan"
         },
         {
