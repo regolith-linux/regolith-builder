@@ -61,13 +61,6 @@
             "packageName": "regolith-desktop",
             "buildPath": "regolith-desktop",
             "upstreamTarball": "",
-            "packageBranch": "ubuntu/eoan"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
-            "packageName": "regolith-desktop",
-            "buildPath": "regolith-desktop",
-            "upstreamTarball": "",
             "packageBranch": "ubuntu/bionic"
         },
         {
@@ -134,6 +127,13 @@
             "packageBranch": "debian"
         },
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/dracula-gtk.git",
+            "packageName": "dracula-gtk",
+            "buildPath": "dracula-gtk",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/remontoire.git",
             "packageName": "remontoire",
             "buildPath": "remontoire",
@@ -176,78 +176,5 @@
             "packageBranch": "master"
         }
     ],
-    "copies": [
-        {
-            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
-            "packageName": "i3-snapshot",
-            "sourceVersion": "bionic",
-            "targetVersions": "eoan"
-        },
-        {
-            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
-            "packageName": "compton",
-            "sourceVersion": "bionic",
-            "targetVersions": "eoan"
-        },
-        {
-            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
-            "packageName": "i3-gaps-wm",
-            "sourceVersion": "bionic",
-            "targetVersions": "eoan"
-        },
-        {
-            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
-            "packageName": "i3ipc-python",
-            "sourceVersion": "bionic",
-            "targetVersions": "eoan"
-        },
-        {
-            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
-            "packageName": "unclutter-xfixes",
-            "sourceVersion": "eoan",
-            "targetVersions": "eoan"
-        },
-        {
-            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
-            "packageName": "playerctl",
-            "sourceVersion": "eoan",
-            "targetVersions": "eoan"
-        },
-        {
-            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
-            "packageName": "fonts-source-code-pro-ttf",
-            "sourceVersion": "eoan",
-            "targetVersions": "eoan"
-        },
-        {
-            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
-            "packageName": "moka-icon-theme",
-            "sourceVersion": "bionic",
-            "targetVersions": "eoan"
-        },
-        {
-            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
-            "packageName": "paper-icon-theme",
-            "sourceVersion": "bionic",
-            "targetVersions": "eoan"
-        },
-        {
-            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
-            "packageName": "paper-icon-theme",
-            "sourceVersion": "bionic",
-            "targetVersions": "eoan"
-        },
-        {
-            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
-            "packageName": "ayu-theme",
-            "sourceVersion": "eoan",
-            "targetVersions": "eoan"
-        },
-        {
-            "ppaUrl": "~kgilmer/ubuntu/speed-ricer",
-            "packageName": "nordic",
-            "sourceVersion": "eoan",
-            "targetVersions": "eoan"
-        }
-    ]
+    "copies": []
 }

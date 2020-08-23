@@ -17,7 +17,7 @@ else
     PACKAGE_SPEC=$3
 fi
 PROMOTE_RELEASE="bionic"
-COPY_RELEASES="eoan,focal"
+COPY_RELEASES="focal"
 
 if [[ "$SOURCE_STAGE" == "$TARGET_STAGE" ]]; then
     echo "Cannot promote to the same stage."
