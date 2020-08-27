@@ -134,6 +134,13 @@
             "packageBranch": "master"
         },
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/gruvbox-gtk.git",
+            "packageName": "gruvbox-gtk",
+            "buildPath": "gruvbox-gtk",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/remontoire.git",
             "packageName": "remontoire",
             "buildPath": "remontoire",
