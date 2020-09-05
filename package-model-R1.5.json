@@ -176,9 +176,16 @@
             "packageBranch": "ubuntu/bionic"
         },
         {
-            "gitRepoUrl": "git@github.com:regolith-linux/xrescat.git",
+            "gitRepoUrl": "https://github.com/regolith-linux/xrescat.git",
             "packageName": "xrescat",
             "buildPath": "xrescat",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-unclutter-xfixes.git",
+            "packageName": "regolith-unclutter-xfixes",
+            "buildPath": "regolith-unclutter-xfixes",
             "upstreamTarball": "",
             "packageBranch": "master"
         }
