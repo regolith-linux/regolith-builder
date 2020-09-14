@@ -45,8 +45,8 @@ checkout() {
 package() {
     print_banner "Preparing source for ${packageModel[packageName]}"
     cd $BUILD_DIR/${packageModel[buildPath]}
-    debian_version=`dpkg-parsechangelog --show-field Version | cut -d'-' -f1`
     full_version=`dpkg-parsechangelog --show-field Version`
+    debian_version="${full_version%-*}"
     cd $BUILD_DIR
 
     echo "Checking if ${packageModel[packageName]} $full_version is in the repo..."
