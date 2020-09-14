@@ -141,6 +141,13 @@
             "packageBranch": "master"
         },
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/plano-theme.git",
+            "packageName": "plano-theme",
+            "buildPath": "plano-theme",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/remontoire.git",
             "packageName": "remontoire",
             "buildPath": "remontoire",
