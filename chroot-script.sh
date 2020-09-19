@@ -34,6 +34,9 @@ ln -s /bin/true /sbin/initctl
 
 apt-get -y upgrade
 
+apt-get install -y debconf-utils
+debconf-set-selections < debconf-selections.txt
+
 apt-get install -y \
     ubuntu-standard \
     casper \
@@ -81,9 +84,9 @@ apt-get purge -y \
 
 apt-get autoremove -y
 
-dpkg-reconfigure locales
+dpkg-reconfigure locales -f noninteractive
 
-dpkg-reconfigure resolvconf
+dpkg-reconfigure resolvconf -f noninteractive
 
 cat <<EOF > /etc/NetworkManager/NetworkManager.conf
 [main]

@@ -11,7 +11,7 @@ if [ -z $ISO_ROOT ]; then
 fi
 
 if [ -d "$ISO_ROOT" ]; then
-  echo "$ISO_ROOT already exists.  Must specify non-existent target."
+  echo "$ISO_ROOT already exists.  Must specify non-existent target directory."
   exit 1
 fi
 
@@ -35,7 +35,7 @@ sudo debootstrap \
    $ISO_ROOT/chroot \
    http://us.archive.ubuntu.com/ubuntu/
 
-sudo cp ./chroot-script.sh $ISO_ROOT/chroot/
+sudo cp ./chroot-script.sh debconf-selections.txt $ISO_ROOT/chroot/
 
 sudo mount --bind /dev $ISO_ROOT/chroot/dev
 sudo mount --bind /run $ISO_ROOT/chroot/run
