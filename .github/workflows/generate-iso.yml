@@ -13,4 +13,4 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Build ISO
-        run: /iso-generator.sh /tmp/iso
+        run: $GITHUB_WORKSPACE/iso-generator.sh /tmp/iso
