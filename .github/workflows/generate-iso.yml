@@ -1,0 +1,16 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Generate ISO
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-focal
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Build ISO
+        run: /iso-generator.sh /tmp/iso
