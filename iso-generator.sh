@@ -25,15 +25,15 @@ sudo apt-get install \
     grub-pc-bin \
     grub-efi-amd64-bin \
     mtools
-    
+
 mkdir $ISO_ROOT
 
 sudo debootstrap \
-    --arch=amd64 \
-    --variant=minbase \
-    bionic \
-    $ISO_ROOT/chroot \
-    http://us.archive.ubuntu.com/ubuntu/
+   --arch=amd64 \
+   --variant=minbase \
+   focal \
+   $ISO_ROOT/chroot \
+   http://us.archive.ubuntu.com/ubuntu/
 
 sudo cp ./chroot-script.sh $ISO_ROOT/chroot/
 
@@ -46,6 +46,7 @@ sudo umount $ISO_ROOT/chroot/dev
 sudo umount $ISO_ROOT/chroot/run
 
 cd $ISO_ROOT
+
 mkdir -p image/{casper,isolinux,install}
 
 sudo cp chroot/boot/vmlinuz-**-**-generic image/casper/vmlinuz
@@ -54,8 +55,9 @@ sudo cp chroot/boot/memtest86+.bin image/install/memtest86+
 
 wget --progress=dot https://www.memtest86.com/downloads/memtest86-usb.zip -O image/install/memtest86-usb.zip
 unzip -p image/install/memtest86-usb.zip memtest86-usb.img > image/install/memtest86
-rm image/install/memtest86-usb.zip
+rm -f image/install/memtest86-usb.zip
 
+cd $ISO_ROOT
 touch image/ubuntu
 
 cat <<EOF > image/isolinux/grub.cfg
@@ -68,7 +70,7 @@ set default="0"
 set timeout=30
 
 menuentry "Try Ubuntu FS without installing" {
-   linux /casper/vmlinuz boot=casper quiet splash ---
+   linux /casper/vmlinuz boot=casper nopersistent toram quiet splash ---
    initrd /casper/initrd
 }
 
@@ -95,8 +97,8 @@ menuentry "Test memory Memtest86 (UEFI, long load time)" {
 }
 EOF
 
+cd $ISO_ROOT
 sudo chroot chroot dpkg-query -W --showformat='${Package} ${Version}\n' | sudo tee image/casper/filesystem.manifest
-
 sudo cp -v image/casper/filesystem.manifest image/casper/filesystem.manifest-desktop
 
 sudo sed -i '/ubiquity/d' image/casper/filesystem.manifest-desktop
@@ -105,10 +107,11 @@ sudo sed -i '/discover/d' image/casper/filesystem.manifest-desktop
 sudo sed -i '/laptop-detect/d' image/casper/filesystem.manifest-desktop
 sudo sed -i '/os-prober/d' image/casper/filesystem.manifest-desktop
 
+cd $ISO_ROOT
 sudo mksquashfs chroot image/casper/filesystem.squashfs
-
 printf $(sudo du -sx --block-size=1 chroot | cut -f1) > image/casper/filesystem.size
 
+cd $ISO_ROOT
 cat <<EOF > image/README.diskdefines
 #define DISKNAME  Ubuntu from scratch
 #define TYPE  binary
@@ -122,7 +125,6 @@ cat <<EOF > image/README.diskdefines
 EOF
 
 cd $ISO_ROOT/image
-
 grub-mkstandalone \
    --format=x86_64-efi \
    --output=isolinux/bootx64.efi \
@@ -149,7 +151,7 @@ grub-mkstandalone \
 
 cat /usr/lib/grub/i386-pc/cdboot.img isolinux/core.img > isolinux/bios.img
 
-sudo /bin/bash -c "(find . -type f -print0 | xargs -0 md5sum | grep -v "\./md5sum.txt" > md5sum.txt)"
+sudo /bin/bash -c "(find . -type f -print0 | xargs -0 md5sum | grep -v -e 'md5sum.txt' -e 'bios.img' -e 'efiboot.img' > md5sum.txt)"
 
 sudo xorriso \
    -as mkisofs \
@@ -168,7 +170,9 @@ sudo xorriso \
    -no-emul-boot \
    -append_partition 2 0xef isolinux/efiboot.img \
    -output "../ubuntu-from-scratch.iso" \
+   -m "isolinux/efiboot.img" \
+   -m "isolinux/bios.img" \
    -graft-points \
-      "." \
-      /boot/grub/bios.img=isolinux/bios.img \
-      /EFI/efiboot.img=isolinux/efiboot.img
+      "/EFI/efiboot.img=isolinux/efiboot.img" \
+      "/boot/grub/bios.img=isolinux/bios.img" \
+      "."
