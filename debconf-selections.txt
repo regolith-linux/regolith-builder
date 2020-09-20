@@ -38,5 +38,3 @@ gdm3	shared/default-x-display-manager	select	lightdm
 lightdm	shared/default-x-display-manager	select	lightdm
 lightdm	lightdm/daemon_name	string	/usr/sbin/lightdm
 gdm3	gdm3/daemon_name	string	/usr/sbin/gdm3
-# Choices: gdm3, lightdm
-gdm3	shared/default-x-display-manager	select	lightdm
