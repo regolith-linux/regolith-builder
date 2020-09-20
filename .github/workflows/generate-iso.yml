@@ -12,6 +12,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: Apply a tag to the new commit
+        uses: mcpierce/github-commit-timestamp-tagger@master
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          base_version: "v1.5.0"
       - name: Build ISO
         run: $GITHUB_WORKSPACE/iso-generator.sh /tmp/iso
       - name: Create Release
