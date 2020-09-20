@@ -1,8 +1,11 @@
 #!/bin/bash
+# This script adapted from https://github.com/mvallim/live-custom-ubuntu-from-scratch
+# Credit: Marcos Tischer Vallim
 
 set -x 
 set -e
 
+# Directory in which to write the ISO to.
 ISO_ROOT=$1
 
 if [ -z $ISO_ROOT ]; then
@@ -69,12 +72,12 @@ insmod all_video
 set default="0"
 set timeout=30
 
-menuentry "Try Ubuntu FS without installing" {
+menuentry "Try Regolith Linux without installing" {
    linux /casper/vmlinuz boot=casper nopersistent toram quiet splash ---
    initrd /casper/initrd
 }
 
-menuentry "Install Ubuntu FS" {
+menuentry "Install Regolith Linux" {
    linux /casper/vmlinuz boot=casper only-ubiquity quiet splash ---
    initrd /casper/initrd
 }
@@ -157,7 +160,7 @@ sudo xorriso \
    -as mkisofs \
    -iso-level 3 \
    -full-iso9660-filenames \
-   -volid "Ubuntu from scratch" \
+   -volid "Regolith Linux 1.5" \
    -eltorito-boot boot/grub/bios.img \
    -no-emul-boot \
    -boot-load-size 4 \
@@ -169,7 +172,7 @@ sudo xorriso \
    -e EFI/efiboot.img \
    -no-emul-boot \
    -append_partition 2 0xef isolinux/efiboot.img \
-   -output "../ubuntu-from-scratch.iso" \
+   -output "../regolith-1.5.iso" \
    -m "isolinux/efiboot.img" \
    -m "isolinux/bios.img" \
    -graft-points \
