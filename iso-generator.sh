@@ -7,9 +7,15 @@ set -e
 
 # Directory in which to write the ISO to.
 ISO_ROOT=$1
+ISO_VERSION=$2
 
-if [ -z $ISO_ROOT ]; then
-  echo "Usage: iso-generator.sh [ISO root directory]"
+if [ -z "$ISO_ROOT" ]; then
+  echo "Usage: iso-generator.sh [ISO root directory] [version of ISO being generated]"
+  exit 1
+fi
+
+if [ -z "$ISO_VERSION" ]; then
+  echo "Usage: iso-generator.sh [ISO root directory] [version of ISO being generated]"
   exit 1
 fi
 
@@ -160,7 +166,7 @@ sudo xorriso \
    -as mkisofs \
    -iso-level 3 \
    -full-iso9660-filenames \
-   -volid "Regolith Linux 1.5" \
+   -volid "Regolith Linux $ISO_VERSION" \
    -eltorito-boot boot/grub/bios.img \
    -no-emul-boot \
    -boot-load-size 4 \
@@ -172,7 +178,7 @@ sudo xorriso \
    -e EFI/efiboot.img \
    -no-emul-boot \
    -append_partition 2 0xef isolinux/efiboot.img \
-   -output "../regolith-1.5.iso" \
+   -output "../regolith-$ISO_VERSION.iso" \
    -m "isolinux/efiboot.img" \
    -m "isolinux/bios.img" \
    -graft-points \
