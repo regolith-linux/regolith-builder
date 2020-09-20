@@ -13,6 +13,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Apply a tag to the new commit
+        id: create_tag
         uses: mcpierce/github-commit-timestamp-tagger@master
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
@@ -25,8 +26,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: $tag_name
-          release_name: Release $tag_name
+          tag_name: ${{ steps.create_tag.outputs.tag_name }}
+          release_name: Release ${{ steps.create_tag.outputs.tag_name }}
           draft: false
           prerelease: true
       - name: Upload Release Asset
