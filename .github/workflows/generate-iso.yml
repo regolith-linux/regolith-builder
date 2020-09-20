@@ -12,14 +12,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          ref: v1.5.0      
       - name: Apply a tag to the new commit
         id: create_tag
         uses: mcpierce/github-commit-timestamp-tagger@master
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          base_version: "v1.5.0"
+          base_version: ${{ github.ref }}
       - name: Build ISO
-        run: $GITHUB_WORKSPACE/iso-generator.sh /tmp/iso
+        run: $GITHUB_WORKSPACE/iso-generator.sh /tmp/iso ${{ github.ref }}
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -37,6 +39,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: /tmp/iso/ubuntu-from-scratch.iso
-          asset_name: ubuntu-from-scratch.iso
+          asset_path: /tmp/iso/*.iso
+          asset_name: regolith-${{ github.ref }}.iso
           asset_content_type: application/zip
