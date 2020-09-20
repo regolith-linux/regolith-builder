@@ -21,7 +21,7 @@ jobs:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           base_version: ${{ github.ref }}
       - name: Build ISO
-        run: $GITHUB_WORKSPACE/iso-generator.sh /tmp/iso ${{ github.ref }}
+        run: $GITHUB_WORKSPACE/iso-generator.sh /tmp/iso ${{ steps.create_tag.outputs.tag_name }}
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
