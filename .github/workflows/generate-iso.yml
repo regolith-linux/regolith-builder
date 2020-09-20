@@ -13,13 +13,17 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
-          ref: v1.5.0      
+          ref: v1.5.0
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch-name;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch     
       - name: Apply a tag to the new commit
         id: create_tag
         uses: mcpierce/github-commit-timestamp-tagger@master
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          base_version: ${{ github.ref }}
+          base_version: ${{ steps.extract_branch.outputs.branch-name }}
       - name: Build ISO
         run: $GITHUB_WORKSPACE/iso-generator.sh /tmp/iso ${{ steps.create_tag.outputs.tag_name }}
       - name: Create Release
