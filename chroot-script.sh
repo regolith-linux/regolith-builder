@@ -11,6 +11,7 @@ mount none -t devpts /dev/pts
 
 export HOME=/root
 export LC_ALL=C
+export DEBIAN_FRONTEND=noninteractive
 
 echo "regolith" > /etc/hostname
 
