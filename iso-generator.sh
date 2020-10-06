@@ -8,6 +8,7 @@ set -e
 # Directory in which to write the ISO to.
 ISO_ROOT=$1
 ISO_VERSION=$2
+CHROOT_DIR=$ISO_ROOT/chroot
 
 if [ -z "$ISO_ROOT" ]; then
   echo "Usage: iso-generator.sh [ISO root directory] [version of ISO being generated]"
@@ -41,18 +42,18 @@ sudo debootstrap \
    --arch=amd64 \
    --variant=minbase \
    focal \
-   $ISO_ROOT/chroot \
+   $CHROOT \
    http://us.archive.ubuntu.com/ubuntu/
 
-sudo cp ./chroot-script.sh debconf-selections.txt $ISO_ROOT/chroot/
+sudo cp ./chroot-script.sh debconf-selections.txt $CHROOT/
 
-sudo mount --bind /dev $ISO_ROOT/chroot/dev
-sudo mount --bind /run $ISO_ROOT/chroot/run
+sudo mount --bind /dev $CHROOT/dev
+sudo mount --bind /run $CHROOT/run
 
-sudo chroot $ISO_ROOT/chroot ./chroot-script.sh
+sudo chroot $CHROOT ./chroot-script.sh
 
-sudo umount $ISO_ROOT/chroot/dev
-sudo umount $ISO_ROOT/chroot/run
+sudo umount $CHROOT/dev
+sudo umount $CHROOT/run
 
 cd $ISO_ROOT
 
