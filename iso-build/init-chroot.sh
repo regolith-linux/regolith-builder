@@ -2,7 +2,6 @@
 # This script adapted from https://github.com/mvallim/live-custom-ubuntu-from-scratch
 # Credit: Marcos Tischer Vallim
 
-set -x
 set -e
 
 mount none -t proc /proc
@@ -35,10 +34,11 @@ ln -fs /etc/machine-id /var/lib/dbus/machine-id
 dpkg-divert --local --rename --add /sbin/initctl
 ln -s /bin/true /sbin/initctl
 
-apt-get -y upgrade
+apt-get install -y debconf-utils apt-utils
 
-apt-get install -y debconf-utils
 debconf-set-selections < debconf-selections.txt
+
+apt-get -y upgrade
 
 apt-get install -y \
     ubuntu-standard \
@@ -48,7 +48,6 @@ apt-get install -y \
     laptop-detect \
     os-prober \
     network-manager \
-    resolvconf \
     net-tools \
     wireless-tools \
     wpagui \
@@ -89,9 +88,6 @@ apt-get install -y \
     regolith-lightdm-config \
     regolith-system \
     software-properties-gtk \
-    ubiquity \
-    ubiquity-frontend-gtk \
-    ubiquity-slideshow-regolith \
     update-manager \
     vim \
     xserver-xorg-input-libinput
@@ -200,9 +196,9 @@ apt-get autoremove -y
 #configure the boot screen
 update-alternatives --set default.plymouth /usr/share/plymouth/themes/regolith/regolith.plymouth
 
-dpkg-reconfigure locales -f noninteractive
+# dpkg-reconfigure locales -f noninteractive
 
-dpkg-reconfigure resolvconf -f noninteractive
+# dpkg-reconfigure resolvconf -f noninteractive
 
 cat <<EOF > /etc/NetworkManager/NetworkManager.conf
 [main]
@@ -214,16 +210,21 @@ dns=dnsmasq
 managed=false
 EOF
 
-dpkg-reconfigure network-manager
+dpkg-reconfigure --frontend=noninteractive network-manager
+dpkg-reconfigure --frontend=noninteractive ubiquity
 
 truncate -s 0 /etc/machine-id
 
 rm /sbin/initctl
 dpkg-divert --rename --remove /sbin/initctl
 
+apt install --reinstall ubiquity
 apt-get clean
 
 rm -rf /tmp/* ~/.bash_history
+
+# Workaround debootstick issue
+rm /etc/resolv.conf
 
 umount /proc
 umount /sys
