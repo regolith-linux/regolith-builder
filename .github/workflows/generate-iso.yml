@@ -25,10 +25,8 @@ jobs:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           base_version: ${{ steps.extract_branch.outputs.branch-name }}
       - name: Build ISO
+        working-directory: $GITHUB_WORKSPACE/iso-build
         run: |
-          pwd
-          ls
-          cd iso-build
           ./build.sh /tmp/iso focal regolith-${{ steps.create_tag.outputs.tag_name }}.iso
       - name: Create Release
         id: create_release
