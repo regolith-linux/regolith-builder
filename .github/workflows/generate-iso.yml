@@ -26,7 +26,9 @@ jobs:
           base_version: ${{ steps.extract_branch.outputs.branch-name }}
       - name: Build ISO
         run: |
-          cd $GITHUB_WORKSPACE/iso-build
+          pwd
+          ls
+          cd iso-build
           ./build.sh /tmp/iso focal regolith-${{ steps.create_tag.outputs.tag_name }}.iso
       - name: Create Release
         id: create_release
