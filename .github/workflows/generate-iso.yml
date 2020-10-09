@@ -26,10 +26,9 @@ jobs:
           base_version: ${{ steps.extract_branch.outputs.branch-name }}
       - name: Build ISO
         run: |
-          set -x
           cd iso-build
           ./build.sh /tmp/iso focal /tmp/iso/regolith-${{ steps.create_tag.outputs.tag_name }}.iso
-          ls -l /tmp/iso/regolith-${{ steps.create_tag.outputs.tag_name }}.iso
+          tar cfzv /tmp/iso/regolith-${{ steps.create_tag.outputs.tag_name }}.iso.gz /tmp/iso/regolith-${{ steps.create_tag.outputs.tag_name }}.iso
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -47,6 +46,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: /tmp/iso/regolith-${{ steps.create_tag.outputs.tag_name }}.iso
-          asset_name: regolith-${{ steps.create_tag.outputs.tag_name }}.iso
+          asset_path: /tmp/iso/regolith-${{ steps.create_tag.outputs.tag_name }}.iso.gz
+          asset_name: regolith-${{ steps.create_tag.outputs.tag_name }}.iso.gz
           asset_content_type: application/zip
