@@ -42,6 +42,7 @@ echo "######################################"
 sudo apt-get install \
     binutils \
     debootstrap \
+    debootstick \
     mtools
 
 mkdir $ISO_ROOT
