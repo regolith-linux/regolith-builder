@@ -27,6 +27,8 @@ jobs:
       - name: Build ISO
         working-directory: $GITHUB_WORKSPACE/iso-build
         run: |
+          pwd
+          ls -l
           ./build.sh /tmp/iso focal /tmp/iso/regolith-${{ steps.create_tag.outputs.tag_name }}.iso
           ls -l /tmp/iso/regolith-${{ steps.create_tag.outputs.tag_name }}.iso
       - name: Create Release
