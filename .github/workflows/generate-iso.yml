@@ -26,8 +26,8 @@ jobs:
           base_version: ${{ steps.extract_branch.outputs.branch-name }}
       - name: Build ISO
         run: |
-          pwd
-          ls -l
+          set -x
+          cd iso-build
           ./build.sh /tmp/iso focal /tmp/iso/regolith-${{ steps.create_tag.outputs.tag_name }}.iso
           ls -l /tmp/iso/regolith-${{ steps.create_tag.outputs.tag_name }}.iso
       - name: Create Release
