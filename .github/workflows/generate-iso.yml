@@ -25,7 +25,6 @@ jobs:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           base_version: ${{ steps.extract_branch.outputs.branch-name }}
       - name: Build ISO
-        working-directory: $GITHUB_WORKSPACE/iso-build
         run: |
           pwd
           ls -l
