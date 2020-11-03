@@ -61,6 +61,13 @@
             "packageName": "regolith-desktop",
             "buildPath": "regolith-desktop",
             "upstreamTarball": "",
+            "packageBranch": "focal"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
+            "packageName": "regolith-desktop",
+            "buildPath": "regolith-desktop",
+            "upstreamTarball": "",
             "packageBranch": "ubuntu/bionic"
         },
         {
