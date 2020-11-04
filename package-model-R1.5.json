@@ -180,7 +180,14 @@
             "packageName": "regolith-default-settings",
             "buildPath": "regolith-default-settings",
             "upstreamTarball": "",
-            "packageBranch": "master"
+            "packageBranch": "debian"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-default-settings.git",
+            "packageName": "regolith-default-settings",
+            "buildPath": "regolith-default-settings",
+            "upstreamTarball": "",
+            "packageBranch": "focal"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-default-settings.git",
