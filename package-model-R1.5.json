@@ -61,7 +61,7 @@
             "packageName": "regolith-desktop",
             "buildPath": "regolith-desktop",
             "upstreamTarball": "",
-            "packageBranch": "focal"
+            "packageBranch": "ubuntu/focal"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
