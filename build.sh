@@ -71,6 +71,10 @@ package() {
 build() {
     print_banner "Building ${packageModel[packageName]}"
     cd $BUILD_DIR/${packageModel[buildPath]}
+    if [ -d  ".github" ]; then 
+        rm -Rf .github 
+        echo "Removed $(pwd).github directory before building to appease debuild."
+    fi
     debuild -S -sa
     cd $BUILD_DIR
 }
