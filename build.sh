@@ -11,7 +11,7 @@ if [ "$#" -lt 3 ]; then
     exit 1
 fi
 
-PACKAGE_MODEL_FILE=$( realpath $1 )
+PACKAGE_MODEL_FILE=$(realpath "$1")
 PPA_URL=$2
 BUILD_DIR=$3
 PACKAGE=$4
@@ -27,9 +27,9 @@ checkout() {
     repo_url=${packageModel[gitRepoUrl]}
     repo_path=${repo_url##*/}
     repo_name=${repo_path%%.*}
-    if [ -d $BUILD_DIR/$repo_name ]; then
+    if [ -d "$BUILD_DIR/$repo_name" ]; then
         echo "Skipping clone, $repo_name already exists."
-        cd $BUILD_DIR/$repo_name
+        cd "$BUILD_DIR/$repo_name"
         git pull
         git checkout ${packageModel[packageBranch]}
     else
@@ -45,7 +45,7 @@ checkout() {
 package() {
     print_banner "Preparing source for ${packageModel[packageName]}"
     cd $BUILD_DIR/${packageModel[buildPath]}
-    full_version=`dpkg-parsechangelog --show-field Version`
+    full_version=$(dpkg-parsechangelog --show-field Version)
     debian_version="${full_version%-*}"
     cd $BUILD_DIR
 
@@ -83,7 +83,7 @@ build() {
 publish() {
     print_banner "Publishing source package ${packageModel[packageName]}"
     cd $BUILD_DIR/${packageModel[buildPath]}
-    version=`dpkg-parsechangelog --show-field Version`
+    version=$(dpkg-parsechangelog --show-field Version)
     cd $BUILD_DIR
 
     dput -f $PPA_URL ${packageModel[buildPath]}/../${packageModel[packageName]}\_$version\_source.changes
@@ -124,7 +124,7 @@ typeset -A packageModel
 typeset -A copyModel
 cd $BUILD_DIR
 
-cat $PACKAGE_MODEL_FILE | jq -rc '.packages[]' | while IFS='' read package; do
+cat "$PACKAGE_MODEL_FILE" | jq -rc '.packages[]' | while IFS='' read -r package; do
     while IFS== read -r key value; do
         packageModel["$key"]="$value"
     done < <( echo $package | jq -r 'to_entries | .[] | .key + "=" + .value')
@@ -142,7 +142,7 @@ cat $PACKAGE_MODEL_FILE | jq -rc '.packages[]' | while IFS='' read package; do
     fi
 done
 
-cat $PACKAGE_MODEL_FILE | jq -rc '.copies[]' | while IFS='' read copy; do
+cat $PACKAGE_MODEL_FILE | jq -rc '.copies[]' | while IFS='' read -r copy; do
     while IFS== read -r key value; do
         copyModel["$key"]="$value"
     done < <( echo $copy | jq -r 'to_entries | .[] | .key + "=" + .value')
