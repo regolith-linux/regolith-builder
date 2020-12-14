@@ -42,8 +42,17 @@ publish_deb() {
     version=$(dpkg-parsechangelog --show-field Version)
     cd $BUILD_DIR
 
-    DEB_PKG_PATH="$(pwd)${packageModel[packageName]}_${version}_source.changes"
-    echo reprepro --basedir "$REPO_PATH" include "$DIST_CODENAME" "$DEB_PKG_PATH"
+    PKG_ARCH="amd64"
+
+    DEB_SRC_PKG_PATH="$(pwd)/${packageModel[packageName]}_${version}_source.changes"
+    DEB_BIN_PKG_PATH="$(pwd)/${packageModel[packageName]}_${version}_${PKG_ARCH}.deb"
+
+    if [ ! -f "$DEB_SRC_PKG_PATH" ] || [  ! -f "$DEB_BIN_PKG_PATH" ]; then
+        echo "Failed to find changes or deb file."
+    fi
+
+    reprepro --basedir "$REPO_PATH" include "$DIST_CODENAME" "$DEB_SRC_PKG_PATH"
+    reprepro --basedir "$REPO_PATH" includedeb "$DIST_CODENAME" "$DEB_BIN_PKG_PATH"
 }
 
 # Main
@@ -72,7 +81,8 @@ cat "$PACKAGE_MODEL_FILE" | jq -rc '.packages[]' | while IFS='' read -r package;
     checkout
     if dist_valid; then
         stage_source
-        build_deb_package
+        build_src_package
+        build_bin_package
         publish_deb
     else
         echo "dist codename does not match in package changelog, ignoring ${packageModel[packageName]}."

@@ -85,7 +85,7 @@ cat "$PACKAGE_MODEL_FILE" | jq -rc '.packages[]' | while IFS='' read -r package;
         echo "Package already in PPA, aborting."
     else
         stage_source
-        build_deb_package
+        build_src_package
         ppa_publish
     fi
 done

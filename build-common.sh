@@ -39,19 +39,30 @@ stage_source() {
         wget ${packageModel[upstreamTarball]} -O ${packageModel[buildPath]}/../${packageModel[packageName]}\_$debian_version.orig.tar.gz
     else
         echo "Generating source tarball from git repo."
-        tar cfzv "${packageModel[packageName]}\_${debian_version}.orig.tar.gz" --exclude .git\* --exclude debian ${packageModel[buildPath]}/../${packageModel[packageName]}
+        tar cfzv ${packageModel[packageName]}\_${debian_version}.orig.tar.gz --exclude .git\* --exclude debian ${packageModel[buildPath]}/../${packageModel[packageName]}
     fi
 }
 
 # Build
-build_deb_package() {
-    print_banner "Building ${packageModel[packageName]}"
+build_src_package() {
+    print_banner "Building source package ${packageModel[packageName]}"
     cd $BUILD_DIR/${packageModel[buildPath]}
     if [ -d  ".github" ]; then 
         rm -Rf .github 
         echo "Removed $(pwd).github directory before building to appease debuild."
     fi
     debuild -S -sa
+    cd $BUILD_DIR
+}
+
+build_bin_package() {
+    print_banner "Building binary package ${packageModel[packageName]}"
+    cd $BUILD_DIR/${packageModel[buildPath]}
+    if [ -d  ".github" ]; then 
+        rm -Rf .github 
+        echo "Removed $(pwd).github directory before building to appease debuild."
+    fi
+    debuild -sa -b
     cd $BUILD_DIR
 }
 
