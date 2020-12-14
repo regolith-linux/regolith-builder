@@ -1,6 +1,5 @@
 #!/bin/bash
-# This script can be used to generate Debian packages of Regolith in a user-specified PPA.
-# By doing this, anyone can create their own variants of the DE and/or distro.
+# This script can be used to generate Debian packages and add them to a local debian repository.
 
 # Input Parameters
 if [ "$#" -lt 5 ]; then
@@ -36,8 +35,7 @@ dist_valid() {
 }
 
 # Publish
-publish_deb() {
-    print_banner "Publishing source package ${packageModel[packageName]}"
+publish_deb() {    
     cd $BUILD_DIR/${packageModel[buildPath]}
     version=$(dpkg-parsechangelog --show-field Version)
     cd $BUILD_DIR
@@ -51,7 +49,9 @@ publish_deb() {
         echo "Failed to find changes or deb file."
     fi
 
+    print_banner "Ingesting source package ${packageModel[packageName]} into $REPO_PATH"
     reprepro --basedir "$REPO_PATH" include "$DIST_CODENAME" "$DEB_SRC_PKG_PATH"
+    print_banner "Ingesting binary package ${packageModel[packageName]} into $REPO_PATH"
     reprepro --basedir "$REPO_PATH" includedeb "$DIST_CODENAME" "$DEB_BIN_PKG_PATH"
 }
 
