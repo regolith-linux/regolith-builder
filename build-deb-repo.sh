@@ -34,25 +34,44 @@ dist_valid() {
     fi
 }
 
+source_pkg_exists() {
+    SRC_PKG=$(reprepro --basedir "$REPO_PATH" listfilter "$DIST_CODENAME" "\$Source (== $0), \$Version (== $1), \$Architecture (== source)")
+
+    if [ -z "$SRC_PKG" ]; then
+        return 1
+    else
+        return 0
+    fi
+}
+
 # Publish
 publish_deb() {    
     cd $BUILD_DIR/${packageModel[buildPath]}
     version=$(dpkg-parsechangelog --show-field Version)
     cd $BUILD_DIR
 
-    PKG_ARCH="amd64"
+    
 
     DEB_SRC_PKG_PATH="$(pwd)/${packageModel[packageName]}_${version}_source.changes"
-    DEB_BIN_PKG_PATH="$(pwd)/${packageModel[packageName]}_${version}_${PKG_ARCH}.deb"
-
-    if [ ! -f "$DEB_SRC_PKG_PATH" ] || [  ! -f "$DEB_BIN_PKG_PATH" ]; then
-        echo "Failed to find changes or deb file."
+    
+    if [ ! -f "$DEB_SRC_PKG_PATH" ]; then
+        echo "Failed to find changes file."
     fi
 
-    print_banner "Ingesting source package ${packageModel[packageName]} into $REPO_PATH"
-    reprepro --basedir "$REPO_PATH" include "$DIST_CODENAME" "$DEB_SRC_PKG_PATH"
-    print_banner "Ingesting binary package ${packageModel[packageName]} into $REPO_PATH"
-    reprepro --basedir "$REPO_PATH" includedeb "$DIST_CODENAME" "$DEB_BIN_PKG_PATH"
+    if source_pkg_exists $packageName $version; then
+        echo "Ignoring source package, already exists in target repository"
+    else 
+        print_banner "Ingesting source package ${packageModel[packageName]} into $REPO_PATH"
+        reprepro --basedir "$REPO_PATH" include "$DIST_CODENAME" "$DEB_SRC_PKG_PATH"
+    fi
+
+    PKG_ARCH="amd64"
+    DEB_CONTROL_FILE="$BUILD_DIR/${packageModel[buildPath]}/debian/control"
+    cat $DEB_CONTROL_FILE | grep ^Package: | cut -d' ' -f2 | while read -r bin_pkg; do 
+        DEB_BIN_PKG_PATH="$(pwd)/${bin_pkg}_${version}_${PKG_ARCH}.deb"
+        print_banner "Ingesting binary package ${bin_pkg} into $REPO_PATH"
+        reprepro --basedir "$REPO_PATH" includedeb "$DIST_CODENAME" "$DEB_BIN_PKG_PATH"
+    done
 }
 
 # Main

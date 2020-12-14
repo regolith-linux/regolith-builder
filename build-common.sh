@@ -26,6 +26,17 @@ checkout() {
     cd - > /dev/null 2>&1
 }
 
+sanitize_git() {
+    if [ -d  ".github" ]; then 
+        rm -Rf .github 
+        echo "Removed $(pwd).github directory before building to appease debuild."
+    fi
+    if [ -d  ".git" ]; then 
+        rm -Rf .git
+        echo "Removed $(pwd).git directory before building to appease debuild."
+    fi
+}
+
 # Stage package source in prep to build 
 stage_source() {
     print_banner "Preparing source for ${packageModel[packageName]}"
@@ -34,6 +45,8 @@ stage_source() {
     debian_version="${full_version%-*}"
     cd $BUILD_DIR
 
+    set -x
+    pwd
     if [ "${packageModel[upstreamTarball]}" != "" ]; then
         echo "Downloading source from ${packageModel[upstreamTarball]}..."
         wget ${packageModel[upstreamTarball]} -O ${packageModel[buildPath]}/../${packageModel[packageName]}\_$debian_version.orig.tar.gz
@@ -41,16 +54,15 @@ stage_source() {
         echo "Generating source tarball from git repo."
         tar cfzv ${packageModel[packageName]}\_${debian_version}.orig.tar.gz --exclude .git\* --exclude debian ${packageModel[buildPath]}/../${packageModel[packageName]}
     fi
+    set +x
 }
 
 # Build
 build_src_package() {
     print_banner "Building source package ${packageModel[packageName]}"
     cd $BUILD_DIR/${packageModel[buildPath]}
-    if [ -d  ".github" ]; then 
-        rm -Rf .github 
-        echo "Removed $(pwd).github directory before building to appease debuild."
-    fi
+    
+    sanitize_git
     debuild -S -sa
     cd $BUILD_DIR
 }
@@ -58,10 +70,8 @@ build_src_package() {
 build_bin_package() {
     print_banner "Building binary package ${packageModel[packageName]}"
     cd $BUILD_DIR/${packageModel[buildPath]}
-    if [ -d  ".github" ]; then 
-        rm -Rf .github 
-        echo "Removed $(pwd).github directory before building to appease debuild."
-    fi
+    
+    sanitize_git
     debuild -sa -b
     cd $BUILD_DIR
 }
