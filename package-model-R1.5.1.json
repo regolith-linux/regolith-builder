@@ -61,7 +61,7 @@
             "packageName": "regolith-desktop",
             "buildPath": "regolith-desktop",
             "upstreamTarball": "",
-            "packageBranch": "debian"
+            "packageBranch": "ubuntu/groovy"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
@@ -76,6 +76,13 @@
             "buildPath": "regolith-desktop",
             "upstreamTarball": "",
             "packageBranch": "ubuntu/bionic"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
+            "packageName": "regolith-desktop",
+            "buildPath": "regolith-desktop",
+            "upstreamTarball": "",
+            "packageBranch": "debian/buster"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-lightdm-config.git",

@@ -23,11 +23,11 @@ checkout() {
         cd $BUILD_DIR
         git clone ${packageModel[gitRepoUrl]} -b ${packageModel[packageBranch]}
     fi
-    cd -
+    cd - > /dev/null 2>&1
 }
 
-# Package 
-package() {
+# Stage package source in prep to build 
+stage_source() {
     print_banner "Preparing source for ${packageModel[packageName]}"
     cd $BUILD_DIR/${packageModel[buildPath]}
     full_version=$(dpkg-parsechangelog --show-field Version)
@@ -39,12 +39,12 @@ package() {
         wget ${packageModel[upstreamTarball]} -O ${packageModel[buildPath]}/../${packageModel[packageName]}\_$debian_version.orig.tar.gz
     else
         echo "Generating source tarball from git repo."
-        tar cfzv ${packageModel[packageName]}\_$debian_version.orig.tar.gz --exclude .git\* --exclude debian ${packageModel[buildPath]}/../${packageModel[packageName]}
+        tar cfzv "${packageModel[packageName]}\_${debian_version}.orig.tar.gz" --exclude .git\* --exclude debian ${packageModel[buildPath]}/../${packageModel[packageName]}
     fi
 }
 
 # Build
-build() {
+build_deb_package() {
     print_banner "Building ${packageModel[packageName]}"
     cd $BUILD_DIR/${packageModel[buildPath]}
     if [ -d  ".github" ]; then 
