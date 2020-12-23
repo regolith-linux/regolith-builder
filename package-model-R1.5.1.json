@@ -50,6 +50,13 @@
             "packageBranch": "master"
         },
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-todo.git",
+            "packageName": "regolith-todo",
+            "buildPath": "regolith-todo",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-gnome-flashback.git",
             "packageName": "regolith-gnome-flashback",
             "buildPath": "regolith-gnome-flashback",
