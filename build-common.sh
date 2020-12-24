@@ -14,15 +14,15 @@ checkout() {
     repo_name=${repo_path%%.*}
     
     if [ -d "$BUILD_DIR/$repo_name" ]; then
-        echo "Deleting existing copy of $repo_name."
-        rm -Rf "$BUILD_DIR/$repo_name"
+        echo "Deleting existing repo, $repo_name"
+        rm -Rfv "$BUILD_DIR/$repo_name"
     fi
-    
+
     print_banner "Checking out ${packageModel[gitRepoUrl]}"
 
     cd $BUILD_DIR
-    git clone ${packageModel[gitRepoUrl]} -b ${packageModel[packageBranch]}
-
+    git clone --recursive ${packageModel[gitRepoUrl]} -b ${packageModel[packageBranch]}
+    
     cd - > /dev/null 2>&1
 }
 
@@ -44,9 +44,7 @@ stage_source() {
     full_version=$(dpkg-parsechangelog --show-field Version)
     debian_version="${full_version%-*}"
     cd $BUILD_DIR
-
-    set -x
-    pwd
+    
     if [ "${packageModel[upstreamTarball]}" != "" ]; then
         echo "Downloading source from ${packageModel[upstreamTarball]}..."
         wget ${packageModel[upstreamTarball]} -O ${packageModel[buildPath]}/../${packageModel[packageName]}\_$debian_version.orig.tar.gz
@@ -54,7 +52,6 @@ stage_source() {
         echo "Generating source tarball from git repo."
         tar cfzv ${packageModel[packageName]}\_${debian_version}.orig.tar.gz --exclude .git\* --exclude debian ${packageModel[buildPath]}/../${packageModel[packageName]}
     fi
-    set +x
 }
 
 # Build
@@ -62,7 +59,8 @@ build_src_package() {
     print_banner "Building source package ${packageModel[packageName]}"
     cd $BUILD_DIR/${packageModel[buildPath]}
     
-    sanitize_git
+    sanitize_git    
+    sudo apt build-dep -y .
     debuild -S -sa
     cd $BUILD_DIR
 }
@@ -85,5 +83,5 @@ env_check() {
     hash dpkg-parsechangelog 2>/dev/null || { echo >&2 "Required command dpkg-parsechangelog is not found on this system. Please install it. Aborting."; exit 1; }
     hash realpath 2>/dev/null || { echo >&2 "Required command realpath is not found on this system. Please install it. Aborting."; exit 1; }
     hash curl 2>/dev/null || { echo >&2 "Required command curl is not found on this system. Please install it. Aborting."; exit 1; }
-    hash copy-package 2>/dev/null || { echo >&2 "Required command copy-package is not found on this system. Please install it from http://bazaar.launchpad.net/~ubuntu-archive/ubuntu-archive-tools/trunk/files. Aborting."; exit 1; }
+    # hash copy-package 2>/dev/null || { echo >&2 "Required command copy-package is not found on this system. Please install it from http://bazaar.launchpad.net/~ubuntu-archive/ubuntu-archive-tools/trunk/files. Aborting."; exit 1; }
 }

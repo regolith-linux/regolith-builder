@@ -6,6 +6,41 @@
             "buildPath": "regolith-system",
             "upstreamTarball": "",
             "packageBranch": "master"
+        },        
+        {
+            "gitRepoUrl": "https://git.launchpad.net/ubuntu/+source/xcb-util",
+            "packageName": "xcb-util",
+            "buildPath": "xcb-util",
+            "upstreamTarball": "",
+            "packageBranch": "applied/ubuntu/groovy"
+        },
+        {
+            "gitRepoUrl": "https://salsa.debian.org/gnome-team/json-glib.git",
+            "packageName": "json-glib",
+            "buildPath": "json-glib",
+            "upstreamTarball": "",
+            "packageBranch": "debian/1.5.2-1"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/i3-snapshot.git",
+            "packageName": "i3-snapshot",
+            "buildPath": "i3-snapshot",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },        
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/python3-i3ipc",
+            "packageName": "python3-i3ipc",
+            "buildPath": "python3-i3ipc",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/fonts-jetbrains-mono.git",
+            "packageName": "fonts-jetbrains-mono",
+            "buildPath": "fonts-jetbrains-mono",
+            "upstreamTarball": "",
+            "packageBranch": "master"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/i3-gaps-wm.git",
@@ -41,13 +76,6 @@
             "buildPath": "i3-next-workspace",
             "upstreamTarball": "",
             "packageBranch": "main"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-st.git",
-            "packageName": "regolith-st",
-            "buildPath": "regolith-st",
-            "upstreamTarball": "https://dl.suckless.org/st/st-0.8.2.tar.gz",
-            "packageBranch": "debian"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/i3xrocks.git",
@@ -102,20 +130,6 @@
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-lightdm-config.git",
             "packageName": "regolith-lightdm-config",
             "buildPath": "regolith-lightdm-config",
-            "upstreamTarball": "",
-            "packageBranch": "master"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/ubiquity-slideshow-ubuntu.git",
-            "packageName": "ubiquity-slideshow-ubuntu",
-            "buildPath": "ubiquity-slideshow-ubuntu",
-            "upstreamTarball": "",
-            "packageBranch": "master"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/plymouth-theme-regolith.git",
-            "packageName": "plymouth-theme-regolith",
-            "buildPath": "plymouth-theme-regolith",
             "upstreamTarball": "",
             "packageBranch": "master"
         },
