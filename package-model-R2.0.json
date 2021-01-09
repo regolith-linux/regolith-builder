@@ -8,6 +8,13 @@
             "packageBranch": "master"
         },        
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-session.git",
+            "packageName": "regolith-session",
+            "buildPath": "regolith-session",
+            "upstreamTarball": "",
+            "packageBranch": "ubuntu/focal"
+        },   
+        {
             "gitRepoUrl": "https://git.launchpad.net/ubuntu/+source/xcb-util",
             "packageName": "xcb-util",
             "buildPath": "xcb-util",
@@ -103,21 +110,7 @@
             "packageName": "regolith-desktop",
             "buildPath": "regolith-desktop",
             "upstreamTarball": "",
-            "packageBranch": "ubuntu/groovy"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
-            "packageName": "regolith-desktop",
-            "buildPath": "regolith-desktop",
-            "upstreamTarball": "",
-            "packageBranch": "ubuntu/focal"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
-            "packageName": "regolith-desktop",
-            "buildPath": "regolith-desktop",
-            "upstreamTarball": "",
-            "packageBranch": "ubuntu/bionic"
+            "packageBranch": "ubuntu/focal-i3cp"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
