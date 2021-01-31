@@ -68,12 +68,12 @@
             "packageName": "regolith-i3-gaps-config",
             "buildPath": "regolith-i3-gaps-config",
             "upstreamTarball": "",
-            "packageBranch": "master"
+            "packageBranch": "i3cp"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-styles.git",
-            "packageName": "regolith-styles",
-            "buildPath": "regolith-styles",
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-look-minimal.git",
+            "packageName": "regolith-look-minimal",
+            "buildPath": "regolith-look-minimal",
             "upstreamTarball": "",
             "packageBranch": "master"
         },
@@ -96,7 +96,7 @@
             "packageName": "regolith-i3xrocks-config",
             "buildPath": "regolith-i3xrocks-config",
             "upstreamTarball": "",
-            "packageBranch": "master"
+            "packageBranch": "i3cp"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-gnome-flashback.git",
@@ -201,7 +201,7 @@
             "packageName": "regolith-rofi-config",
             "buildPath": "regolith-rofi-config",
             "upstreamTarball": "",
-            "packageBranch": "master"
+            "packageBranch": "i3cp"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-rofication.git",
