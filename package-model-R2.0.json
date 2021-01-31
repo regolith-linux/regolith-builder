@@ -215,21 +215,7 @@
             "packageName": "regolith-default-settings",
             "buildPath": "regolith-default-settings",
             "upstreamTarball": "",
-            "packageBranch": "debian"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-default-settings.git",
-            "packageName": "regolith-default-settings",
-            "buildPath": "regolith-default-settings",
-            "upstreamTarball": "",
-            "packageBranch": "focal"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-default-settings.git",
-            "packageName": "regolith-default-settings",
-            "buildPath": "regolith-default-settings",
-            "upstreamTarball": "",
-            "packageBranch": "ubuntu/bionic"
+            "packageBranch": "i3cp"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/xrescat.git",
