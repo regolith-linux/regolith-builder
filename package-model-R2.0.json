@@ -64,11 +64,11 @@
             "packageBranch": "debian/buster"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-i3-gaps-config.git",
-            "packageName": "regolith-i3-gaps-config",
-            "buildPath": "regolith-i3-gaps-config",
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-i3-config.git",
+            "packageName": "regolith-i3-config",
+            "buildPath": "regolith-i3-config",
             "upstreamTarball": "",
-            "packageBranch": "i3cp"
+            "packageBranch": "master"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-look-minimal.git",
