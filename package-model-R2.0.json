@@ -131,7 +131,7 @@
             "packageName": "regolith-ftue",
             "buildPath": "regolith-ftue",
             "upstreamTarball": "",
-            "packageBranch": "master"
+            "packageBranch": "i3cp"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-none.git",
