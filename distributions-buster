@@ -1,0 +1,7 @@
+Origin: regolith-linux.github.io/debian-repo
+Label: Regolith Desktop Environment
+Codename: buster
+Architectures: amd64 source
+Components: main
+Description: Regolith Debian
+SignWith: 0F71F62C2C031233

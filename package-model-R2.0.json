@@ -1,19 +1,12 @@
 {
     "packages": [
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-system.git",
-            "packageName": "regolith-system",
-            "buildPath": "regolith-system",
-            "upstreamTarball": "",
-            "packageBranch": "master"
-        },        
-        {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-session.git",
             "packageName": "regolith-session",
             "buildPath": "regolith-session",
             "upstreamTarball": "",
             "packageBranch": "ubuntu/focal"
-        },   
+        },
         {
             "gitRepoUrl": "https://git.launchpad.net/ubuntu/+source/xcb-util",
             "packageName": "xcb-util",
@@ -34,7 +27,7 @@
             "buildPath": "i3-snapshot",
             "upstreamTarball": "",
             "packageBranch": "master"
-        },        
+        },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/python3-i3ipc",
             "packageName": "python3-i3ipc",
@@ -50,11 +43,11 @@
             "packageBranch": "master"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/i3-gaps-wm.git",
-            "packageName": "i3-gaps-wm",
-            "buildPath": "i3-gaps-wm",
+            "gitRepoUrl": "https://github.com/regolith-linux/fonts-materialdesignicons-webfont.git",
+            "packageName": "fonts-materialdesignicons-webfont",
+            "buildPath": "fonts-materialdesignicons-webfont",
             "upstreamTarball": "",
-            "packageBranch": "ubuntu/groovy"
+            "packageBranch": "master"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/i3-gaps-wm.git",
@@ -99,32 +92,11 @@
             "packageBranch": "i3cp"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-gnome-flashback.git",
-            "packageName": "regolith-gnome-flashback",
-            "buildPath": "regolith-gnome-flashback",
-            "upstreamTarball": "",
-            "packageBranch": "master"
-        },
-        {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
             "packageName": "regolith-desktop",
             "buildPath": "regolith-desktop",
             "upstreamTarball": "",
             "packageBranch": "ubuntu/focal-i3cp"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
-            "packageName": "regolith-desktop",
-            "buildPath": "regolith-desktop",
-            "upstreamTarball": "",
-            "packageBranch": "debian/buster"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-lightdm-config.git",
-            "packageName": "regolith-lightdm-config",
-            "buildPath": "regolith-lightdm-config",
-            "upstreamTarball": "",
-            "packageBranch": "master"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-ftue.git",
@@ -158,34 +130,6 @@
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-picom-glx.git",
             "packageName": "regolith-compositor-picom-glx",
             "buildPath": "regolith-compositor-picom-glx",
-            "upstreamTarball": "",
-            "packageBranch": "master"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/cahuella.git",
-            "packageName": "cahuella",
-            "buildPath": "cahuella",
-            "upstreamTarball": "",
-            "packageBranch": "debian"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/dracula-gtk.git",
-            "packageName": "dracula-gtk",
-            "buildPath": "dracula-gtk",
-            "upstreamTarball": "",
-            "packageBranch": "master"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/gruvbox-gtk.git",
-            "packageName": "gruvbox-gtk",
-            "buildPath": "gruvbox-gtk",
-            "upstreamTarball": "",
-            "packageBranch": "master"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/plano-theme.git",
-            "packageName": "plano-theme",
-            "buildPath": "plano-theme",
             "upstreamTarball": "",
             "packageBranch": "master"
         },
