@@ -64,6 +64,13 @@
             "packageBranch": "master"
         },
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/ayu-theme.git",
+            "packageName": "ayu-theme",
+            "buildPath": "ayu-theme",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-look-minimal.git",
             "packageName": "regolith-look-minimal",
             "buildPath": "regolith-look-minimal",
