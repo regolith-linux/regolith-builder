@@ -1,0 +1,243 @@
+{
+    "packages": [
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-system.git",
+            "packageName": "regolith-system",
+            "buildPath": "regolith-system",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-i3-gaps-config.git",
+            "packageName": "regolith-i3-gaps-config",
+            "buildPath": "regolith-i3-gaps-config",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-styles.git",
+            "packageName": "regolith-styles",
+            "buildPath": "regolith-styles",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/i3-next-workspace.git",
+            "packageName": "i3-next-workspace",
+            "buildPath": "i3-next-workspace",
+            "upstreamTarball": "",
+            "packageBranch": "main"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-st.git",
+            "packageName": "regolith-st",
+            "buildPath": "regolith-st",
+            "upstreamTarball": "https://dl.suckless.org/st/st-0.8.2.tar.gz",
+            "packageBranch": "debian"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/i3xrocks.git",
+            "packageName": "i3xrocks",
+            "buildPath": "i3xrocks",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-i3xrocks-config.git",
+            "packageName": "regolith-i3xrocks-config",
+            "buildPath": "regolith-i3xrocks-config",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-todo.git",
+            "packageName": "regolith-todo",
+            "buildPath": "regolith-todo",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-gnome-flashback.git",
+            "packageName": "regolith-gnome-flashback",
+            "buildPath": "regolith-gnome-flashback",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
+            "packageName": "regolith-desktop",
+            "buildPath": "regolith-desktop",
+            "upstreamTarball": "",
+            "packageBranch": "ubuntu/groovy"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
+            "packageName": "regolith-desktop",
+            "buildPath": "regolith-desktop",
+            "upstreamTarball": "",
+            "packageBranch": "ubuntu/focal"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
+            "packageName": "regolith-desktop",
+            "buildPath": "regolith-desktop",
+            "upstreamTarball": "",
+            "packageBranch": "ubuntu/bionic"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-lightdm-config.git",
+            "packageName": "regolith-lightdm-config",
+            "buildPath": "regolith-lightdm-config",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/ubiquity-slideshow-ubuntu.git",
+            "packageName": "ubiquity-slideshow-ubuntu",
+            "buildPath": "ubiquity-slideshow-ubuntu",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/plymouth-theme-regolith.git",
+            "packageName": "plymouth-theme-regolith",
+            "buildPath": "plymouth-theme-regolith",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-ftue.git",
+            "packageName": "regolith-ftue",
+            "buildPath": "regolith-ftue",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-none.git",
+            "packageName": "regolith-compositor-none",
+            "buildPath": "regolith-compositor-none",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-xcompmgr.git",
+            "packageName": "regolith-compositor-xcompmgr",
+            "buildPath": "regolith-compositor-xcompmgr",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-compton-glx.git",
+            "packageName": "regolith-compositor-compton-glx",
+            "buildPath": "regolith-compositor-compton-glx",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-compositor-picom-glx.git",
+            "packageName": "regolith-compositor-picom-glx",
+            "buildPath": "regolith-compositor-picom-glx",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/cahuella.git",
+            "packageName": "cahuella",
+            "buildPath": "cahuella",
+            "upstreamTarball": "",
+            "packageBranch": "debian"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/dracula-gtk.git",
+            "packageName": "dracula-gtk",
+            "buildPath": "dracula-gtk",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/gruvbox-gtk.git",
+            "packageName": "gruvbox-gtk",
+            "buildPath": "gruvbox-gtk",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/plano-theme.git",
+            "packageName": "plano-theme",
+            "buildPath": "plano-theme",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/midnight-gtk-theme.git",
+            "packageName": "midnight-gtk-theme",
+            "buildPath": "midnight-gtk-theme",
+            "upstreamTarball": "",
+            "packageBranch": "main"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/qogir-icon-theme.git",
+            "packageName": "qogir-icon-theme",
+            "buildPath": "qogir-icon-theme",
+            "upstreamTarball": "",
+            "packageBranch": "main"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/remontoire.git",
+            "packageName": "remontoire",
+            "buildPath": "remontoire",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-rofi-config.git",
+            "packageName": "regolith-rofi-config",
+            "buildPath": "regolith-rofi-config",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-rofication.git",
+            "packageName": "regolith-rofication",
+            "buildPath": "regolith-rofication",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-default-settings.git",
+            "packageName": "regolith-default-settings",
+            "buildPath": "regolith-default-settings",
+            "upstreamTarball": "",
+            "packageBranch": "ubuntu/groovy"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-default-settings.git",
+            "packageName": "regolith-default-settings",
+            "buildPath": "regolith-default-settings",
+            "upstreamTarball": "",
+            "packageBranch": "ubuntu/focal"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-default-settings.git",
+            "packageName": "regolith-default-settings",
+            "buildPath": "regolith-default-settings",
+            "upstreamTarball": "",
+            "packageBranch": "ubuntu/bionic"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/xrescat.git",
+            "packageName": "xrescat",
+            "buildPath": "xrescat",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-unclutter-xfixes.git",
+            "packageName": "regolith-unclutter-xfixes",
+            "buildPath": "regolith-unclutter-xfixes",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        }
+    ],
+    "copies": []
+}
