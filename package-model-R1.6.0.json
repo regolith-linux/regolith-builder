@@ -190,11 +190,25 @@
             "packageBranch": "main"
         },
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/nerd-font-iosevka.git",
+            "packageName": "nerd-font-iosevka",
+            "buildPath": "nerd-font-iosevka",
+            "upstreamTarball": "",
+            "packageBranch": "main"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/remontoire.git",
             "packageName": "remontoire",
             "buildPath": "remontoire",
             "upstreamTarball": "",
             "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/rofi.git",
+            "packageName": "rofi",
+            "buildPath": "rofi",
+            "upstreamTarball": "",
+            "packageBranch": "r1.6.1"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-rofi-config.git",
