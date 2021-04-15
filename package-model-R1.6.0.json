@@ -1,6 +1,13 @@
 {
     "packages": [
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/i3-gaps-wm.git",
+            "packageName": "i3-gaps-wm",
+            "buildPath": "i3-gaps-wm",
+            "upstreamTarball": "",
+            "packageBranch": "main"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-system.git",
             "packageName": "regolith-system",
             "buildPath": "regolith-system",
