@@ -82,13 +82,6 @@
             "packageName": "regolith-desktop",
             "buildPath": "regolith-desktop",
             "upstreamTarball": "",
-            "packageBranch": "ubuntu/groovy"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
-            "packageName": "regolith-desktop",
-            "buildPath": "regolith-desktop",
-            "upstreamTarball": "",
             "packageBranch": "ubuntu/focal"
         },
         {
@@ -236,7 +229,7 @@
             "packageName": "regolith-default-settings",
             "buildPath": "regolith-default-settings",
             "upstreamTarball": "",
-            "packageBranch": "ubuntu/groovy"
+            "packageBranch": "ubuntu/hirsute"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-default-settings.git",
