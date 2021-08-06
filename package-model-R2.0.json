@@ -36,6 +36,13 @@
             "packageBranch": "master"
         },
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/ayu-theme.git",
+            "packageName": "ayu-theme",
+            "buildPath": "ayu-theme",
+            "upstreamTarball": "",
+            "packageBranch": "master"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/fonts-jetbrains-mono.git",
             "packageName": "fonts-jetbrains-mono",
             "buildPath": "fonts-jetbrains-mono",
@@ -57,6 +64,13 @@
             "packageBranch": "debian/buster"
         },
         {
+            "gitRepoUrl": "https://github.com/regolith-linux/i3.git",
+            "packageName": "i3",
+            "buildPath": "i3",
+            "upstreamTarball": "",
+            "packageBranch": "next"
+        },
+        {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-i3-config.git",
             "packageName": "regolith-i3-config",
             "buildPath": "regolith-i3-config",
@@ -76,6 +90,13 @@
             "buildPath": "regolith-look-minimal",
             "upstreamTarball": "",
             "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/i3-snapshot.git",
+            "packageName": "i3-snapshot",
+            "buildPath": "i3-snapshot",
+            "upstreamTarball": "",
+            "packageBranch": "ubuntu/hirsute"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/i3-next-workspace.git",

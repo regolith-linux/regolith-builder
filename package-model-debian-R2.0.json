@@ -1,18 +1,32 @@
 {
     "packages": [
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/i3-gaps-wm.git",
-            "packageName": "i3-gaps-wm",
-            "buildPath": "i3-gaps-wm",
-            "upstreamTarball": "",
-            "packageBranch": "main"
-        },
-        {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-system.git",
             "packageName": "regolith-system",
             "buildPath": "regolith-system",
             "upstreamTarball": "",
             "packageBranch": "master"
+        },
+        {
+            "gitRepoUrl": "https://git.launchpad.net/ubuntu/+source/xcb-util",
+            "packageName": "xcb-util",
+            "buildPath": "xcb-util",
+            "upstreamTarball": "",
+            "packageBranch": "ubuntu/devel"
+        },        
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/i3-gaps-wm.git",
+            "packageName": "i3-gaps-wm",
+            "buildPath": "i3-gaps-wm",
+            "upstreamTarball": "",
+            "packageBranch": "ubuntu/groovy"
+        },
+        {
+            "gitRepoUrl": "https://github.com/regolith-linux/i3-gaps-wm.git",
+            "packageName": "i3-gaps-wm",
+            "buildPath": "i3-gaps-wm",
+            "upstreamTarball": "",
+            "packageBranch": "debian/buster"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-i3-gaps-config.git",
@@ -57,13 +71,6 @@
             "packageBranch": "master"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/regolith-todo.git",
-            "packageName": "regolith-todo",
-            "buildPath": "regolith-todo",
-            "upstreamTarball": "",
-            "packageBranch": "master"
-        },
-        {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-gnome-flashback.git",
             "packageName": "regolith-gnome-flashback",
             "buildPath": "regolith-gnome-flashback",
@@ -75,7 +82,7 @@
             "packageName": "regolith-desktop",
             "buildPath": "regolith-desktop",
             "upstreamTarball": "",
-            "packageBranch": "ubuntu/hirsute"
+            "packageBranch": "ubuntu/groovy"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
@@ -92,11 +99,11 @@
             "packageBranch": "ubuntu/bionic"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/i3-snapshot.git",
-            "packageName": "i3-snapshot",
-            "buildPath": "i3-snapshot",
+            "gitRepoUrl": "https://github.com/regolith-linux/regolith-desktop.git",
+            "packageName": "regolith-desktop",
+            "buildPath": "regolith-desktop",
             "upstreamTarball": "",
-            "packageBranch": "ubuntu/hirsute"
+            "packageBranch": "debian/buster"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-lightdm-config.git",
@@ -106,9 +113,9 @@
             "packageBranch": "master"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/ubiquity-slideshow-regolith.git",
-            "packageName": "ubiquity-slideshow-regolith",
-            "buildPath": "ubiquity-slideshow-regolith",
+            "gitRepoUrl": "https://github.com/regolith-linux/ubiquity-slideshow-ubuntu.git",
+            "packageName": "ubiquity-slideshow-ubuntu",
+            "buildPath": "ubiquity-slideshow-ubuntu",
             "upstreamTarball": "",
             "packageBranch": "master"
         },
@@ -183,46 +190,11 @@
             "packageBranch": "master"
         },
         {
-            "gitRepoUrl": "https://github.com/regolith-linux/ayu-theme.git",
-            "packageName": "ayu-theme",
-            "buildPath": "ayu-theme",
-            "upstreamTarball": "",
-            "packageBranch": "master"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/midnight-gtk-theme.git",
-            "packageName": "midnight-gtk-theme",
-            "buildPath": "midnight-gtk-theme",
-            "upstreamTarball": "",
-            "packageBranch": "main"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/qogir-icon-theme.git",
-            "packageName": "qogir-icon-theme",
-            "buildPath": "qogir-icon-theme",
-            "upstreamTarball": "",
-            "packageBranch": "main"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/nerd-font-iosevka.git",
-            "packageName": "nerd-font-iosevka",
-            "buildPath": "nerd-font-iosevka",
-            "upstreamTarball": "",
-            "packageBranch": "main"
-        },
-        {
             "gitRepoUrl": "https://github.com/regolith-linux/remontoire.git",
             "packageName": "remontoire",
             "buildPath": "remontoire",
             "upstreamTarball": "",
             "packageBranch": "master"
-        },
-        {
-            "gitRepoUrl": "https://github.com/regolith-linux/rofi.git",
-            "packageName": "rofi",
-            "buildPath": "rofi",
-            "upstreamTarball": "",
-            "packageBranch": "r1.6.1"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-rofi-config.git",
@@ -243,14 +215,14 @@
             "packageName": "regolith-default-settings",
             "buildPath": "regolith-default-settings",
             "upstreamTarball": "",
-            "packageBranch": "ubuntu/hirsute"
+            "packageBranch": "debian"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-default-settings.git",
             "packageName": "regolith-default-settings",
             "buildPath": "regolith-default-settings",
             "upstreamTarball": "",
-            "packageBranch": "ubuntu/focal"
+            "packageBranch": "focal"
         },
         {
             "gitRepoUrl": "https://github.com/regolith-linux/regolith-default-settings.git",
